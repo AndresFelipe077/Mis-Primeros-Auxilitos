@@ -65,7 +65,7 @@
     </div>
 
     <div class="hijos-navbar">
-        <img src="img/menu/settings2.png" onclick="location.href='login.html'">
+        <img src="img/menu/settings2.png" onclick="location.href='{{route('login')}}'">
     </div>
 
   </div>

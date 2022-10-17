@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RegistroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,18 +15,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', HomeController::class)->name('home');
+/*
+Route::get('login', [Registrocontroller::class, 'index'])->name('login');
+
+Route::get('registro', [Registrocontroller::class, 'create'])->name('registro');
+
+Route::get('menu', [RegistroController::class, 'show'])->name('menu');*/
+//Grupo de rutas registro
+Route::controller(RegistroController::class)->group(function(){
+
+    Route::get('registro/login', 'index');
+
+    Route::get('registro/registro', 'create');
+    
+    //Show seria la vista de perfil
+    //Route::get('menu','show');
+    //En la vista perfil se modificarian los datos
+
+    //En la vista perfil se eliminaria la cuenta(registro)
+
 });
 
-Route::get('login', function(){
-    return view('login');
-});
 
-Route::get('registro', function(){
-    return view('registro');
-});
-
+/*
 Route::get('menu', function(){
     return view('menu');
 });
+*/
