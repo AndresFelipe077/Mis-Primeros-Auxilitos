@@ -14,6 +14,9 @@
         <h1 id="titulo-Auxilitos"><img id="image_Title" src="{{ asset('img/botiquin.png') }}" height="50px" width="50px"> MIS PRIMEROS AUXILITOS <img id="image_Title" src="{{ asset('img/botiquin.png') }}" height="50px" width="50px"></h1>
             
             <form action="" method="POST" class="form">
+
+
+
                 <h1 id="titulo">Login</h1>
                 <div class="grupo">
                     <input type="email" id="correo" placeholder="Correo" required>
@@ -32,7 +35,7 @@
 
                 <div class="grupo">
                     <text>¿No tienes cuenta?</text>
-                  <button type="submit" id="btn_registrarse" onclick="location.href=''">registrarse</button>  
+                  <button type="submit" id="btn_registrarse" onclick="location.href='{{route('registro.create')}}'">registrarse</button>  
 
                 </div>
 

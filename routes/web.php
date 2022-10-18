@@ -25,9 +25,11 @@ Route::get('menu', [RegistroController::class, 'show'])->name('menu');*/
 //Grupo de rutas registro
 Route::controller(RegistroController::class)->group(function(){
 
-    Route::get('registro/login', 'index');
+    Route::get('registro/login', 'index')->name('registro.index');
 
-    Route::get('registro/registro', 'create');
+    Route::get('registro/registro', 'create')->name('registro.create');
+
+    Route::post('registro', [RegistroController::class, 'store'])->name('registro.store');
     
     //Show seria la vista de perfil
     //Route::get('menu','show');

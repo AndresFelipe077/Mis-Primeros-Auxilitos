@@ -26,7 +26,7 @@ class RegistroFactory extends Factory
             'nombre'                => $this -> faker -> randomElement(['Andres','Felipe','Nicolas','Smith']),
             'correo'                => $this -> faker -> randomElement(['Andres@gmail.com','Felipe@gmail.com','Nicolas@gmail.com','Smith@gmail.com']),
             'genero'                => $this -> faker -> randomElement(['Masculino','Femenino']),
-            'fechaNacimiento'       => $this -> faker -> randomElement(['2003/12/13','2002/12/16','2005/08/13','2022/02/14']),
+            'fechaNacimiento'       => $this -> faker -> randomElement(['12/12/2002','12/12/2012','12/12/2002','12/12/2002']),
             'contrasena'           => $this -> faker -> randomElement(['afsd7afy','asfd8aufas','39fhad','fa98dfua']),
             'confirmarContrasena' => $this -> faker -> randomElement(['afsd7afy','asfd8aufas','39fhad','fa98dfua'])
 
