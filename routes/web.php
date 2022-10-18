@@ -31,6 +31,8 @@ Route::controller(RegistroController::class)->group(function(){
 
     Route::post('registro', [RegistroController::class, 'store'])->name('registro.store');
     
+    
+    
     //Show seria la vista de perfil
     //Route::get('menu','show');
     //En la vista perfil se modificarian los datos

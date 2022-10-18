@@ -30,7 +30,8 @@
                 </div>
 
                 <div class="content_password_Olvida">
-                    <a id="text_password" href="recuperarContrasena.html"> ¿Has olvidado tu contraseña?</a>
+                    <a id="text_password" href=""> ¿Has olvidado tu contraseña?</a>
+                    
                 </div>
 
                 <div class="grupo">

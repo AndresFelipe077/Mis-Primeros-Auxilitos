@@ -38,6 +38,8 @@ class RegistroController extends Controller
 
         $registro->save();
 
+        return redirect()->route('registro.index');
+
     }
 
     /*

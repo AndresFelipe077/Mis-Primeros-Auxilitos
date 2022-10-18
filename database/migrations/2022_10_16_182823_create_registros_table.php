@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('nombre',50);
             $table->string('correo',50);
             $table->string('genero',20);
-            $table->string('fechaNacimiento');
+            $table->date('fechaNacimiento');
             $table->string('contrasena',16);
             $table->string('confirmarContrasena',16);
 
