@@ -42,6 +42,29 @@ class RegistroController extends Controller
 
     }
 
+
+    public function edit(Registro $registro)
+    {
+        return view('registro.edit', compact('registro'));
+    }
+
+    public function update(Request $request, Registro $registro)
+    {
+        
+        $registro->nombre = $request->nombre;
+        $registro->correo = $request->correo;
+        $registro->genero = $request->nombre;
+        $registro->fechaNacimiento = $request->fechaNacimiento;
+        $registro->contrasena = $request->contrasena;
+        $registro->confirmarContrasena = $request->confirmarContrasena;
+
+        $registro->save();
+
+        return redirect()->route('registro.index');
+        // return $request->all();
+
+    }
+
     /*
     //Mostrar
     public function show()

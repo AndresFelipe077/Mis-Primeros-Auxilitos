@@ -31,7 +31,10 @@ Route::controller(RegistroController::class)->group(function(){
 
     Route::post('registro', [RegistroController::class, 'store'])->name('registro.store');
     
-    
+    Route::get('registro/edit', 'edit')->name('registro.edit');
+
+    //Put para actualizar
+    Route::put('registro/', 'update')->name('registro.update');
     
     //Show seria la vista de perfil
     //Route::get('menu','show');
