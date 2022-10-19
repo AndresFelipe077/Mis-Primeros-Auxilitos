@@ -20,6 +20,7 @@ return new class extends Migration
             $table->id();
             $date = Carbon::now();
             $date = $date->format('d-m-Y');
+            $table->string('imagen')->default('')->nullable();
             $table->string('nombre',50);
             $table->string('correo',50);
             $table->string('genero',20);

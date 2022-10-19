@@ -81,7 +81,7 @@
         
     <!--Fin-->
 
-    <form class="form1" action="{{route('registro.update')}}" method="POST">
+    <form class="form1" action="{{route('registro.update', $registro)}}" method="POST">
 
         @csrf
 

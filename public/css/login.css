@@ -47,9 +47,8 @@
     -moz-user-select: none;
     -webkit-user-select: none
     
-  
-
 }
+#image-head{border-radius:"10px";}
 
 /*Animacion*/
 @keyframes mianimacion{

@@ -38,7 +38,7 @@ class RegistroController extends Controller
 
         $registro->save();
 
-        return redirect()->route('registro.index');
+        return redirect()->route('registro.edit');
 
     }
 
@@ -62,6 +62,7 @@ class RegistroController extends Controller
 
         return redirect()->route('registro.index');
         // return $request->all();
+        
 
     }
 

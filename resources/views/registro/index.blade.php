@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link id="image-head" rel="shortcut icon" href="{{asset('img/botiquin.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
     <script type="text/javascript" src="javaScript.js"></script>
 </head>
