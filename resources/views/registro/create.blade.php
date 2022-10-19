@@ -10,7 +10,7 @@
 <body class="body-registro">
 
     
-    <form action="{{route('registro.store', $registro)}}" method="POST" id="formulario">
+    <form action="{{route('registro.store',$registro)}}" method="POST" id="formulario">
 
         {{--Input oculto--}}
         @csrf

@@ -45,6 +45,7 @@ class RegistroController extends Controller
 
     public function edit(Registro $registro)
     {
+        // return $registro;
         return view('registro.edit', compact('registro'));
     }
 

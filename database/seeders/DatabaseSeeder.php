@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        Registro::Factory(20)->create();
+        Registro::Factory(2)->create();
         //$this->call(RegistroSeeder::class);
 
     }
