@@ -14,16 +14,16 @@
     <content class="content_login">
         <h1 id="titulo-Auxilitos"><img id="image_Title" src="{{ asset('img/botiquin.png') }}" height="50px" width="50px"> MIS PRIMEROS AUXILITOS <img id="image_Title" src="{{ asset('img/botiquin.png') }}" height="50px" width="50px"></h1>
             
-            <form action="{{}}" method="POST" class="form">
+            <form action="/login" method="POST" class="form">
 
-
+                @csrf
 
                 <h1 id="titulo">Login</h1>
                 <div class="grupo">
-                    <input type="email" id="correo" name="correo" placeholder="Correo" required>
+                    <input type="email" id="correo" name="email" placeholder="Correo" required>
                 </div>
                 <div class="grupo">
-                    <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required></input>
+                    <input type="password" id="contrasena" name="password" placeholder="Contraseña" required></input>
                 </div>              
 
                 <div class="grupo">
@@ -37,13 +37,13 @@
 
                 <div class="grupo">
                     <text>¿No tienes cuenta?</text>
-                  <button id="btn_registrarse" onclick="location.href='{{route('registro.create')}}'">registrarse</button>  
+                  <button id="btn_registrarse" onclick="location.href=''">registrarse</button>  
 
                 </div>
 
                 <div class="grupo">
-                    <img class="img-btn-Facebook" src="{{ asset('img/Facebook.svg') }}" onclick="location.href='index.html'">
-                    <img class="img-btn-Google" src="{{ asset('img/Google.svg') }}" onclick="location.href='index.html'">
+                    <img class="img-btn-Facebook" src="{{ asset('img/Facebook.svg') }}" onclick="location.href=''">
+                    <img class="img-btn-Google" src="{{ asset('img/Google.svg') }}" onclick="location.href=''">
                 </div>
 
                 

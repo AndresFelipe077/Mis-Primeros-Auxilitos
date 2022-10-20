@@ -10,7 +10,7 @@
 <body class="body-registro">
 
     
-    <form action="{{route('registro.store')}}" method="POST" id="formulario">
+    <form action="/register" method="POST" id="formulario">
 
         {{--Input oculto--}}
         @csrf
@@ -19,11 +19,12 @@
             <h1 id="tituloAuxilitos">MIS PRIMEROS AUXILITOS</h1>
             <h1 id="tituloRegistro">Registro</h1>
             <div class="grupo">
-                <input class="input" type="text" name="nombre" id="name" required><span class="barra"></span>
+
+                <input class="input" type="text" name="name" id="name" required><span class="barra"></span>
                 <label  class="label" for="">Nombre</label>
             </div>
             <div class="grupo">
-                <input class="input" type="email" name="correo" id="name" required><span class="barra"></span>
+                <input class="input" type="email" name="email" id="name" required><span class="barra"></span>
                 <label class="label" for="">Correo</label>
             </div>
             <div class="grupo">
@@ -35,16 +36,17 @@
                 <label class="label" for="">Fecha de nacimiento</label>
             </div>
             <div class="grupo">
-                <input class="input" type="password" name="contrasena" id="name" required><span class="barra"></span>
+                <input class="input" type="password" name="password" id="name" required><span class="barra"></span>
                 <label class="label" for="">Contraseña</label>
             </div>
+
             <div class="grupo">
-                <input class="input" type="password" name="confirmarContrasena" id="name" required><span class="barra"></span>
+                <input class="input" type="password" name="password_confirmation" id="name" required><span class="barra"></span>
                 <label class="label" for="">Confirmar contraseña</label>
-            </div>
+            </div> 
 
             <button type="submit" id="btn_Registrar">Registrarse</button>
-            <button type="submit" id="btn_Regresar" onclick="location.href='{{route('registro.index')}}'">Regresar</button>    
+            <button type="submit" id="btn_Regresar" onclick="location.href=''">Regresar</button>    
 
 
         </div>

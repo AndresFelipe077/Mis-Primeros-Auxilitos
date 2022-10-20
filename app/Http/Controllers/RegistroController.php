@@ -11,12 +11,16 @@ use Illuminate\Http\Request;
 class RegistroController extends Controller
 {
 
-    
-
     //Login
     public function index()
     {
-        return view('registro.index');
+        //$registro = Registro::all();
+
+    return view('registro.index'/*, compact('registro')*/);
+    }
+
+    public function validateL()
+    {
     }
 
     //Registro
@@ -26,25 +30,26 @@ class RegistroController extends Controller
     }
 
     public function store(Request $request){
-        
+  
         $registro = new Registro();
 
-        $registro->nombre = $request->nombre;
-        $registro->correo = $request->correo;
-        $registro->genero = $request->nombre;
-        $registro->fechaNacimiento = $request->fechaNacimiento;
-        $registro->contrasena = $request->contrasena;
+        $registro->nombre              = $request->nombre;
+        $registro->correo              = $request->correo;
+        $registro->genero              = $request->nombre;
+        $registro->fechaNacimiento     = $request->fechaNacimiento;
+        $registro->contrasena          = $request->contrasena;
         $registro->confirmarContrasena = $request->confirmarContrasena;
 
         $registro->save();
 
-        return redirect()->route('registro.edit');
+        return redirect()->route('registro.index');
 
     }
 
 
     public function edit(Registro $registro)
     {
+        
         // return $registro;
         return view('registro.edit', compact('registro'));
     }
