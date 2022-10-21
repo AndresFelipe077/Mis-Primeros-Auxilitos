@@ -22,8 +22,8 @@ return new class extends Migration
             $date = $date->format('d-m-Y');
             $table->string('imagen')->default('')->nullable();
             $table->string('nombre',50);
-            $table->string('correo',50);
-            $table->string('genero',20);
+            $table->string('correo',50)->unique();
+            $table->string('genero');
             $table->date('fechaNacimiento');
             $table->string('contrasena',16);
             $table->string('confirmarContrasena',16);

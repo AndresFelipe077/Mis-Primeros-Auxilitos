@@ -68,6 +68,8 @@
         <img src="img/menu/settings2.png" onclick="location.href=''">
     </div>
 
+    
+
   </div>
 
   

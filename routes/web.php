@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\logoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use App\Http\Controllers\loginController;
 |
 */
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('index');
 /*
 Route::get('login', [Registrocontroller::class, 'index'])->name('login');
 
@@ -37,16 +38,17 @@ Route::controller(RegistroController::class)->group(function(){
 
     //Put para actualizar
     Route::put('registro/{registro}', 'update')->name('registro.update');
-    
-    
+
     //Show seria la vista de perfil
     //Route::get('menu','show');
     //En la vista perfil se modificarian los datos
 
     //En la vista perfil se eliminaria la cuenta(registro)
 
+
 });
 
+/*
 Route::get('/register', [RegisterController::class, 'show']);
 
 Route::post('/register', [RegisterController::class, 'register']);
@@ -55,9 +57,11 @@ Route::get('/login', [LoginController::class, 'show']);
 
 Route::post('/login', [LoginController::class, 'login']);
 
+Route::get('logout', [LogoutController::class, 'logout']);
+
 //Route::post('/home', [HomeController::class, 'index']);
 
-
+*/
 /*
 Route::get('menu', function(){
     return view('menu');

@@ -14,10 +14,10 @@
     <content class="content_login">
         <h1 id="titulo-Auxilitos"><img id="image_Title" src="{{ asset('img/botiquin.png') }}" height="50px" width="50px"> MIS PRIMEROS AUXILITOS <img id="image_Title" src="{{ asset('img/botiquin.png') }}" height="50px" width="50px"></h1>
             
-            <form action="{{}}" method="POST" class="form">
+            <form action="" method="POST" class="form">
 
-
-
+                @csrf
+                
                 <h1 id="titulo">Login</h1>
                 <div class="grupo">
                     <input type="email" id="correo" name="correo" placeholder="Correo" required>
@@ -27,7 +27,7 @@
                 </div>              
 
                 <div class="grupo">
-                    <button id="btn_loguearse" class="submit" onclick="location.href=''">ACEPTAR</button>
+                    <button id="btn_loguearse" class="submit" type="submit">ACEPTAR</button>
                 </div>
 
                 <div class="content_password_Olvida">

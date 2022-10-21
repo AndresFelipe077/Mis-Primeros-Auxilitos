@@ -392,6 +392,22 @@ class == .
     
 }
 
+
+.custom-checkbox {
+    position: relative;
+    cursor: pointer;
+}
+
+.label-genero{ 
+    color:var(--colorTextos);
+    font-size:16px;
+    
+}
+
+
+
+
+
 .input:focus~label,
 .input:valid~label{
     top: -14px;

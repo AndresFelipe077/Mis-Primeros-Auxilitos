@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Registro;
+use Illuminate\Support\Facades\Auth;
 
 //Para la fecha
 use Carbon\Carbon;
@@ -15,13 +16,22 @@ class RegistroController extends Controller
     public function index()
     {
         //$registro = Registro::all();
+        
 
     return view('registro.index'/*, compact('registro')*/);
     }
 
-    public function validateL()
+    public function validar(Request $request)
     {
+        $registro = new Registro();
+
+        if($registro->correo = $request->correo && $registro->contrasena = $request->contrasena)
+        {
+            return redirect()->route('index');
+        }
     }
+
+    
 
     //Registro
     public function create()
@@ -35,12 +45,13 @@ class RegistroController extends Controller
 
         $registro->nombre              = $request->nombre;
         $registro->correo              = $request->correo;
-        $registro->genero              = $request->nombre;
+        $registro->genero              = $request->genero;
         $registro->fechaNacimiento     = $request->fechaNacimiento;
         $registro->contrasena          = $request->contrasena;
         $registro->confirmarContrasena = $request->confirmarContrasena;
 
         $registro->save();
+
 
         return redirect()->route('registro.index');
 
@@ -67,19 +78,7 @@ class RegistroController extends Controller
         $registro->save();
 
         return redirect()->route('registro.index');
-        // return $request->all();
         
-
     }
-
-    /*
-    //Mostrar
-    public function show()
-    {
-        return view('menu');
-    }
-    */
-
-
 
 }
