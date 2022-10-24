@@ -28,8 +28,19 @@
                 <label class="label" for="">Correo</label>
             </div>
             <div class="grupo">
-                <input class="input" type="text" name="genero" id="name" required><span class="barra"></span>
-                <label class="label" for="">Genero</label>
+                <h4 class="label-genero">Escoge tu genero: </h4>
+                <label>
+                    <input name="genero" class="custom-checkbox" value="Masculino" type="checkbox">
+                    <span><label class="label1" for="">Masculino</label></span>
+                </label>
+                <label>
+                    <input name="genero" class="custom-checkbox" value="Femenino" type="checkbox">
+                    <span>Femenino</span>
+                </label>
+                <label>
+                    <input name="genero" class="custom-checkbox" value="Otro" type="checkbox">
+                    <span>Otro</span>
+                </label>
             </div>
             <div class="grupo">
                 <input class="input" type="date" name="fechaNacimiento" id="name" required><span class="barra"></span>
@@ -58,7 +69,7 @@
     </form>
 
     
-   
+    <script src="{{asset('js/checkCheckBox.js')}}"></script>
     
     
 </body>

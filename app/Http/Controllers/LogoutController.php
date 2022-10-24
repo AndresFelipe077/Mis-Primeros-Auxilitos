@@ -9,14 +9,14 @@ use Illuminate\Support\Facades\Session;
 class LogoutController extends Controller
 {
     
-    public function logout()
-    {
-        Session::flush();//Para liberar
+    // public function logout()
+    // {
+    //     Session::flush();//Para liberar
 
-        Auth::logout();
+    //     Auth::logout();
         
-        return redirect()->to('/login');
+    //     return redirect()->to('/login');
 
-    }
+    // }
 
 }

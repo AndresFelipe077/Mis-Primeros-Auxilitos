@@ -10,7 +10,7 @@
 </head>
 <body class="body-perfil">
 
-    <a id="a-regresar-perfil" href="{{route('registro.index')}}">regresar</a>
+    <a id="a-regresar-perfil" href="{{route('home.index')}}">regresar</a>
 
     <form class="form1" action="" method="POST">
 
@@ -25,7 +25,7 @@
         </div>
 
         <div class="container-hijo1">
-            <label for="" id="label-name">{{$registro->nombre}}</label>
+            <label for="" id="label-name"></label>
         </div>
 
         <div class="container-hijo-1">
@@ -46,16 +46,16 @@
         <div class="container-1">
 
             <div class="container-perfil-datos">
-                <label  for="">Nombre: {{$registro->nombre}}</label>
+                <label  for="">Nombre:</label>
             </div>
             <div class="container-perfil-datos">
-                <label for="">Correo: {{$registro->correo}}</label>
+                <label for="">Correo:</label>
             </div>
             <div class="container-perfil-datos">
-                <label for="">Genero: {{$registro->genero}}</label>
+                <label for="">Genero: </label>
             </div>
             <div class="container-perfil-datos">
-                <label for="">Fecha de nacimiento: {{$registro->fechaNacimiento}}</label>
+                <label for="">Fecha de nacimiento:</label>
             </div>
             <div class="container-perfil-datos">
                 <button type="submit" class="btn-cambiar-contrasena-perfil"> Cambiar contraseña </button>
@@ -81,7 +81,7 @@
         
     <!--Fin-->
 
-    <form class="form1" action="{{route('registro.update', $registro)}}" method="POST">
+    <form class="form1" action="{{route('edit.update', $registro)}}" method="POST">
 
         @csrf
 
@@ -92,11 +92,11 @@
                 <h1 id="tituloAuxilitos">MIS PRIMEROS AUXILITOS</h1>
                 <h1 id="tituloRegistro">Registro</h1>
                 <div class="grupo">
-                    <input class="input" type="text" name="nombre" id="name" required value="{{$registro->nombre}}"><span class="barra"></span>
-                    <label  class="label" for="">Nombre</label>
+                    <input class="input" type="text" name="name" id="name" required ><span class="barra"></span>
+                    <label  class="label" for="">Nombre {{$registro->name}}</label>
                 </div>
                 <div class="grupo">
-                    <input class="input" type="email" name="correo" id="name" required value="{{$registro->correo}}"><span class="barra"></span>
+                    <input class="input" type="email" name="email" id="name" required ><span class="barra"></span>
                     <label class="label" for="">Correo</label>
                 </div>
     
@@ -111,25 +111,25 @@
                     </label>
                     <label>
                         <input name="genero" class="custom-checkbox" value="Femenino" type="checkbox" >
-                        <span>Femenino</span>
+                        <span><label class="label1" for="">Femenino</label></span>
                     </label>
                     <label>
                         <input name="genero" class="custom-checkbox" value="Otro" type="checkbox">
-                        <span>Otro </span>
+                        <span><label class="label1" for="">Otro</label></span>
                     </label>
                 </div>
     
                 
                 <div class="grupo">
-                    <input class="input" type="date" name="fechaNacimiento" id="name" required value="{{$registro->fechaNacimiento}}"><span class="barra"></span>
+                    <input class="input" type="date" name="fechaNacimiento" id="name" required ><span class="barra"></span>
                     <label class="label" for="">Fecha de nacimiento</label>
                 </div>
                 <div class="grupo">
-                    <input class="input" type="password" name="contrasena" id="name" required value="{{$registro->contrasena}}"><span class="barra"></span>
+                    <input class="input" type="password" name="password" id="name" required ><span class="barra"></span>
                     <label class="label" for="">Contraseña</label>
                 </div>
                 <div class="grupo">
-                    <input class="input" type="password" name="confirmarContrasena" id="name" required value="{{$registro->confirmarContrasena}}"><span class="barra"></span>
+                    <input class="input" type="password" name="password_confirmation" id="name" required ><span class="barra"></span>
                     <label class="label" for="">Confirmar contraseña</label>
                 </div>
     

@@ -14,9 +14,11 @@
     <content class="content_login">
         <h1 id="titulo-Auxilitos"><img id="image_Title" src="{{ asset('img/botiquin.png') }}" height="50px" width="50px"> MIS PRIMEROS AUXILITOS <img id="image_Title" src="{{ asset('img/botiquin.png') }}" height="50px" width="50px"></h1>
             
-            <form action="" method="POST" class="form">
+            <form action="{{route('validar.login')}}" method="POST" class="form">
 
                 @csrf
+
+                @method('put')
                 
                 <h1 id="titulo">Login</h1>
                 <div class="grupo">

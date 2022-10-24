@@ -8,31 +8,31 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function show(){
-        return view('auth.login');
-    }
+    // public function show(){
+    //     return view('auth.login');
+    // }
 
-    public function login(LoginRequest $request)
-    {
-        $credencials = $request->getCredentials();
+    // public function login(LoginRequest $request)
+    // {
+    //     $credencials = $request->getCredentials();
 
-        if(!Auth::validate($credencials))
-        {
-            return redirect()->to('/login')->withErrors('auth.failed');
-        }
+    //     if(!Auth::validate($credencials))
+    //     {
+    //         return redirect()->to('/login')->withErrors('auth.failed');
+    //     }
     
-        $user = Auth::getProvider()->retrieveByCredentials($credencials);
+    //     $user = Auth::getProvider()->retrieveByCredentials($credencials);
 
-        Auth::login($user);
+    //     Auth::login($user);
 
-        return $this->authenticate($request, $user);
+    //     return $this->authenticate($request, $user);
 
-    }
+    // }
 
-    public function authenticate(Request $request, $user)
-    {
-        return redirect('/home');
-    }
+    // public function authenticate(Request $request, $user)
+    // {
+    //     return redirect('/home');
+    // }
 
 
 }

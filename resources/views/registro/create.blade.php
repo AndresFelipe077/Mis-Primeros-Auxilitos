@@ -31,7 +31,7 @@
                 <h4 class="label-genero">Escoge tu genero: </h4>
                 <label>
                     <input name="genero" class="custom-checkbox" value="Masculino" type="checkbox">
-                    <span>Masculino</span>
+                    <span><label class="label1" for="">Masculino</label></span>
                 </label>
                 <label>
                     <input name="genero" class="custom-checkbox" value="Femenino" type="checkbox">

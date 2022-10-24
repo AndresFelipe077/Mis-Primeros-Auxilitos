@@ -37,7 +37,7 @@
 
                 <div class="grupo">
                     <text>¿No tienes cuenta?</text>
-                  <button id="btn_registrarse" onclick="location.href=''">registrarse</button>  
+                  <button id="btn_registrarse" onclick="location.href='{{route('registro')}}'">registrarse</button>  
 
                 </div>
 

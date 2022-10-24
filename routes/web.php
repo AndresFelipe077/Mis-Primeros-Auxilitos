@@ -6,6 +6,8 @@ use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\logoutController;
+use Illuminate\Auth\Middleware\Authenticate;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,7 @@ use App\Http\Controllers\logoutController;
 |
 */
 
-Route::get('/home', [HomeController::class, 'index'])->name('index');
+Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 /*
 Route::get('login', [Registrocontroller::class, 'index'])->name('login');
 
@@ -28,7 +30,24 @@ Route::get('menu', [RegistroController::class, 'show'])->name('menu');*/
 //Grupo de rutas registro
 Route::controller(RegistroController::class)->group(function(){
 
+    Route::get('/register', 'showRegister')->name('registro');
+
+    Route::post('/register','register');
+    
+    Route::get('/login', 'show')->name('login');
+    
+    Route::post('/login','login');
+    
+    Route::get('logout','logout')->name('logout');
+
+    Route::get('edit/edit', 'edit')->name('auth.edit');
+
+    Route::put('edit/{registro}/', 'update')->name('edit.update');
+
+/*
     Route::get('registro/login', 'index')->name('registro.index');
+    
+    Route::put('validar/login', 'validar')->name('validar.login');
 
     Route::get('registro/registro', 'create')->name('registro.create');
 
@@ -38,7 +57,7 @@ Route::controller(RegistroController::class)->group(function(){
 
     //Put para actualizar
     Route::put('registro/{registro}', 'update')->name('registro.update');
-
+*/
     //Show seria la vista de perfil
     //Route::get('menu','show');
     //En la vista perfil se modificarian los datos

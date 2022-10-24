@@ -8,15 +8,15 @@ use App\Models\User;
 
 class RegisterController extends Controller
 {
-    public function show()
-    {
-        return view('auth.register');
-    }
+    // public function show()
+    // {
+    //     return view('auth.register');
+    // }
 
-    public function register(RegisterRequest $request)
-    {
-        $user = User::create($request->validated());
-        return redirect('/login')->with('Exito','cuenta creada exitosamente!!!');
-    }
+    // public function register(RegisterRequest $request)
+    // {
+    //     $user = User::create($request->validated());
+    //     return redirect('/login')->with('Exito','cuenta creada exitosamente!!!');
+    // }
 
 }

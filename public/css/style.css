@@ -392,6 +392,10 @@ class == .
     
 }
 
+.label1{
+    color:var(--colorTextos);
+}
+
 
 .custom-checkbox {
     position: relative;
@@ -400,6 +404,11 @@ class == .
 
 .label-genero{ 
     color:var(--colorTextos);
+    font-size:16px;
+    
+}
+.label-genero-edit{ 
+    color:var(--colorTextoPlaceholder);
     font-size:16px;
     
 }

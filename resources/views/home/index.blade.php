@@ -53,22 +53,25 @@
     <!-- The navigation menu -->
 <div class="navbar1">
     <div class="hijos-navbar">
-        <img src="img/menu/home.png" onclick="location.href='index.html'">
+        <img src="img/menu/home.png" onclick="location.href=''">
     </div>
 
     <div class="hijos-navbar">
-        <img src="img/menu/challengue.png" onclick="location.href='game.html'">
+        <img src="img/menu/challengue.png" onclick="location.href=''">
     </div>
 
     <div class="hijos-navbar">
-        <img src="img/menu/microphone.png" onclick="location.href='index.html'">
+        <img src="img/menu/microphone.png" onclick="location.href=''">
     </div>
 
     <div class="hijos-navbar">
         <img src="img/menu/settings2.png" onclick="location.href=''">
+        <a href="{{route('auth.edit')}}">Edit</a>
     </div>
 
-    
+
+
+    <a href="{{route('logout')}}">Cerrar sesion</a>
 
   </div>
 

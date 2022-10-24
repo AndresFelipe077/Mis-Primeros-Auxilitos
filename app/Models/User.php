@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-
-use Illuminate\Sanctum\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -55,7 +55,11 @@ class User extends Authenticatable
 
     
 
-/*
+/**
+     * Get the user's first name.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
     public function name(): Attribute
     {
         return new Attribute(
@@ -64,6 +68,6 @@ class User extends Authenticatable
         );
         
     }
-    */
+
 
 }
