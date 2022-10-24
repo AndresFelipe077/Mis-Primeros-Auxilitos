@@ -24,6 +24,7 @@
 
     <section class="gallery">
         
+        {{auth()->user()->id}}
 
         <div>
 
@@ -65,13 +66,12 @@
     </div>
 
     <div class="hijos-navbar">
-        <img src="img/menu/settings2.png" onclick="location.href=''">
-        <a href="{{route('auth.edit', $registro)}}">Edit</a>
+        <img src="img/menu/settings2.png" onclick="location.href='{{route('home.ajustes')}}'">
     </div>
 
 
 
-    <a href="{{route('logout')}}">Cerrar sesion</a>
+    
 
   </div>
 

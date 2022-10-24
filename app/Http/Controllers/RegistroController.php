@@ -41,7 +41,7 @@ class RegistroController extends Controller
 
     public function authenticate(Request $request, $user)
     {
-        return redirect('/home');
+        return redirect()->route('home.index');
     }
 
     //Registro
@@ -61,8 +61,8 @@ class RegistroController extends Controller
 
     public function edit(User $registro)
     {
-        
-        return view('auth.edit', compact('registro'));
+        /*$registro = User::find($registro);*/
+    return view('auth.edit', compact('registro'));
         
     }
 
@@ -94,6 +94,11 @@ class RegistroController extends Controller
         
         return redirect()->to('/login');
 
+    }
+
+    public function ajustes()
+    {
+        return view('home.ajustes');
     }
 
     /*

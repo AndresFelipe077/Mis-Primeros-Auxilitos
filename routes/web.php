@@ -36,13 +36,16 @@ Route::controller(RegistroController::class)->group(function(){
     
     Route::get('/login', 'show')->name('login');
     
-    Route::post('/login','login');
+    Route::post('/login','login')->name('login.post');
     
     Route::get('logout','logout')->name('logout');
 
-    Route::get('edit/{registro}/edit', 'edit')->name('auth.edit');
+    Route::get('edit/', 'edit')->name('auth.edit');
 
-    Route::put('edit/{registro}/', 'update')->name('edit.update');
+    Route::put('edit/', 'update')->name('edit.update');
+
+    //Acceder a vista ajustes
+    Route::get('home/ajustes','ajustes')->name('home.ajustes');
 
 /*
     Route::get('registro/login', 'index')->name('registro.index');
