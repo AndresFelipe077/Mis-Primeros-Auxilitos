@@ -57,7 +57,7 @@
             </div> 
 
             <button type="submit" id="btn_Registrar">Registrarse</button>
-            <button type="submit" id="btn_Regresar" onclick="location.href=''">Regresar</button>    
+            <button type="submit" id="btn_Regresar" onclick="location.href='{{route('login')}}'">Regresar</button>    
 
 
         </div>

@@ -40,7 +40,7 @@ Route::controller(RegistroController::class)->group(function(){
     
     Route::get('logout','logout')->name('logout');
 
-    Route::get('edit/edit', 'edit')->name('auth.edit');
+    Route::get('edit/{registro}/edit', 'edit')->name('auth.edit');
 
     Route::put('edit/{registro}/', 'update')->name('edit.update');
 

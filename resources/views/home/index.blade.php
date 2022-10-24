@@ -66,7 +66,7 @@
 
     <div class="hijos-navbar">
         <img src="img/menu/settings2.png" onclick="location.href=''">
-        <a href="{{route('auth.edit')}}">Edit</a>
+        <a href="{{route('auth.edit', $registro)}}">Edit</a>
     </div>
 
 

@@ -62,7 +62,7 @@ class RegistroController extends Controller
     public function edit(User $registro)
     {
         
-        return view('auth.edit');
+        return view('auth.edit', compact('registro'));
         
     }
 
@@ -80,7 +80,7 @@ class RegistroController extends Controller
         $registro->save();
 
 
-        return redirect()->route('home.index');
+        return redirect()->route('auth.edit');
     }
 
 

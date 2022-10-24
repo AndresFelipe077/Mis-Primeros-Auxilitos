@@ -25,7 +25,7 @@
         </div>
 
         <div class="container-hijo1">
-            <label for="" id="label-name"></label>
+            <label for="" id="label-name">{{$registro->name}}</label>
         </div>
 
         <div class="container-hijo-1">
@@ -46,16 +46,16 @@
         <div class="container-1">
 
             <div class="container-perfil-datos">
-                <label  for="">Nombre:</label>
+                <label  for="">Nombre: {{$registro->name}}</label>
             </div>
             <div class="container-perfil-datos">
-                <label for="">Correo:</label>
+                <label for="">Correo: {{$registro->email}}</label>
             </div>
             <div class="container-perfil-datos">
-                <label for="">Genero: </label>
+                <label for="">Genero: {{$registro->genero}}</label>
             </div>
             <div class="container-perfil-datos">
-                <label for="">Fecha de nacimiento:</label>
+                <label for="">Fecha de nacimiento: {{$registro->fechaNacimiento}}</label>
             </div>
             <div class="container-perfil-datos">
                 <button type="submit" class="btn-cambiar-contrasena-perfil"> Cambiar contraseña </button>
@@ -92,11 +92,11 @@
                 <h1 id="tituloAuxilitos">MIS PRIMEROS AUXILITOS</h1>
                 <h1 id="tituloRegistro">Registro</h1>
                 <div class="grupo">
-                    <input class="input" type="text" name="name" id="name" required ><span class="barra"></span>
-                    <label  class="label" for="">Nombre {{$registro->name}}</label>
+                    <input class="input" type="text" name="name" id="name" required value="{{$registro->name}}"><span class="barra"></span>
+                    <label  class="label" for="">Nombre</label>
                 </div>
                 <div class="grupo">
-                    <input class="input" type="email" name="email" id="name" required ><span class="barra"></span>
+                    <input class="input" type="email" name="email" id="name" required value="{{$registro->email}}"><span class="barra"></span>
                     <label class="label" for="">Correo</label>
                 </div>
     
@@ -121,7 +121,7 @@
     
                 
                 <div class="grupo">
-                    <input class="input" type="date" name="fechaNacimiento" id="name" required ><span class="barra"></span>
+                    <input class="input" type="date" name="fechaNacimiento" id="name" required value="{{$registro->fechaNacimiento}}"><span class="barra"></span>
                     <label class="label" for="">Fecha de nacimiento</label>
                 </div>
                 <div class="grupo">
