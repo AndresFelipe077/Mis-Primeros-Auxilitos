@@ -98,6 +98,14 @@ class UserController extends Controller
         return view('home.ajustes');
     }
 
+    public function destroy(User $registro)
+    {
+        $registro->delete();
+
+        return redirect()->route('login');
+    }
+
+
 }//Fin UserController
 /*
 

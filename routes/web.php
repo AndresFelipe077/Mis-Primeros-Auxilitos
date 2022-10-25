@@ -38,10 +38,10 @@ Route::controller(UserController::class)->group(function(){
     //Acceder a vista ajustes
     Route::get('home/ajustes','ajustes')->name('home.ajustes');
 
-    Route::get('delete/','delete')->name('delete');
-
-
     Route::get('logout','logout')->name('logout');
+
+    Route::delete('edit/{registro}','destroy')->name('registro.destroy');
+
 
 });
 

@@ -10,8 +10,6 @@
 </head>
 <body class="body-ajustes">
 
-    {{auth()->user()->id}}
-
     <div class="container-perfil-padre">
 
         <div class="container-perfil-hijo">

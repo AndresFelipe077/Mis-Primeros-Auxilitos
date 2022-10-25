@@ -71,9 +71,11 @@
                 </div>
             </div>
     
-            <div>
-                <a class="a-borrar-cuenta" onclick="return confirm('¿Seguro que deseas eliminar tu cuenta?')" href="{{route('delete')}}">Borrar cuenta</a>
-            </div>
+            <form method="POST" action="{{route('registro.destroy', $registro)}}">
+                @csrf
+                @method('delete')
+                <button type="submit" class="a-borrar-cuenta" onclick="return confirm('¿Seguro que deseas eliminar tu cuenta?')">Borrar cuenta</button>
+            </form>
     
         </div>
 

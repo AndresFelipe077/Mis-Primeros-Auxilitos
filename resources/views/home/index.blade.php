@@ -23,8 +23,6 @@
  
 
     <section class="gallery">
-        
-        {{auth()->user()->id}}
 
         <div>
 
