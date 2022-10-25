@@ -15,7 +15,7 @@
     <div class="container-perfil-padre">
 
         <div class="container-perfil-hijo">
-            <a id="enlace" href="{{route('auth.edit', $registro->id)}}">Perfil</a>
+            <a id="enlace" href="{{route('auth.edit', auth()->user()->id)}}">Perfil</a>
         </div>
         
         <div class="container-perfil-hijo">

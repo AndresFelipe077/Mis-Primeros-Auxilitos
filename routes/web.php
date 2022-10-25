@@ -31,7 +31,7 @@ Route::controller(UserController::class)->group(function(){
     Route::post('/login/','login')->name('login.post');
 
     //Visualizar datos
-    Route::get('edit/{registro}', 'edit')->name('auth.edit');
+    Route::get('edit/{registro}/edit', 'edit')->name('auth.edit');
 
     Route::put('edit/{registro}', 'update')->name('edit.update');
 
