@@ -9,11 +9,15 @@
     <link rel="shortcut icon" href="{{asset('img/menu/settings2.png')}}" type="image/x-icon">
 </head>
 <body class="body-ajustes">
-    
+
+    {{auth()->user()->id}}
+
     <div class="container-perfil-padre">
+
         <div class="container-perfil-hijo">
-            <a id="enlace" href="{{route('auth.edit')}}">Perfil</a>
+            <a id="enlace" href="{{route('auth.edit', $registro->id)}}">Perfil</a>
         </div>
+        
         <div class="container-perfil-hijo">
             <button id="enlace-btn" class="btn-desactivar-sonido">Desactivar sonido</button>
         </div>

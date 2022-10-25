@@ -1,23 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Registro;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
-
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Session;
-
 //Para la fecha
 use Carbon\Carbon;
 
-
-class RegistroController extends Controller
+class UserController extends Controller
 {
-
     public function show(){
         return view('auth.login');
     }
@@ -61,26 +56,28 @@ class RegistroController extends Controller
 
     public function edit(User $registro)
     {
+
         /*$registro = User::find($registro);*/
-    return view('auth.edit', compact('registro'));
+        
+        return view('auth.edit', compact('registro'));
         
     }
 
     
-    public function update(RegisterRequest $request, User $registro)
+    public function update(Request $request, User $registro)
     {
-
-        $registro->name                  = $request->name;
-        $registro->email                 = $request->email;
-        $registro->genero                = $request->genero;
-        $registro->fechaNacimiento       = $request->fechaNacimiento;
-        $registro->password              = $request->password;
-        $registro->password_confirmation = $request->password_confirmation;
-
+        $registro->fill($request->all());
+        
+        /*
+        $registro->name            = $request->name;
+        $registro->genero          = $request->genero;
+        $registro->fechaNacimiento = $request->fechaNacimiento;
+        */
+        
         $registro->save();
+        
 
-
-        return redirect()->route('auth.edit');
+        return redirect()->route('auth.edit', compact('registro'));
     }
 
 
@@ -101,7 +98,8 @@ class RegistroController extends Controller
         return view('home.ajustes');
     }
 
-    /*
+}//Fin UserController
+/*
 
     //Login
     public function index()
@@ -199,4 +197,3 @@ class RegistroController extends Controller
         
     }
 */
-}

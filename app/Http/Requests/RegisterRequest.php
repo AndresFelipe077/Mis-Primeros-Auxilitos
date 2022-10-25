@@ -30,7 +30,7 @@ class RegisterRequest extends FormRequest
             'genero'                 => 'required',
             'fechaNacimiento'        => 'required',
             'password'               => 'required|min:8',
-            'password_confirmation' => 'required|same:password',
+            'password_confirmation'  => 'required|same:password',
             
         ];
     }

@@ -25,7 +25,7 @@
         </div>
 
         <div class="container-hijo1">
-            <label for="" id="label-name">{{auth()->user()->name}}</label>
+            <label for="" id="label-name">{{$registro->name}}</label>
         </div>
 
         <div class="container-hijo-1">
@@ -46,16 +46,16 @@
         <div class="container-1">
 
             <div class="container-perfil-datos">
-                <label  for="">Nombre: {{auth()->user()->name}}</label>
+                <label  for="">Nombre: {{$registro->name}}</label>
             </div>
             <div class="container-perfil-datos">
-                <label for="">Correo: {{auth()->user()->email}}</label>
+                <label for="">Correo: {{$registro->email}}</label>
             </div>
             <div class="container-perfil-datos">
-                <label for="">Genero: {{auth()->user()->genero}}</label>
+                <label for="">Genero: {{$registro->genero}}</label>
             </div>
             <div class="container-perfil-datos">
-                <label for="">Fecha de nacimiento: {{auth()->user()->fechaNacimiento}}</label>
+                <label for="">Fecha de nacimiento: {{$registro->fechaNacimiento}}</label>
             </div>
             <div class="container-perfil-datos">
                 <button type="submit" class="btn-cambiar-contrasena-perfil"> Cambiar contraseña </button>
@@ -72,7 +72,7 @@
             </div>
     
             <div>
-                <a class="a-borrar-cuenta" href="login.html">Borrar cuenta</a>
+                <a class="a-borrar-cuenta" onclick="return confirm('¿Seguro que deseas eliminar tu cuenta?')" href="{{route('delete')}}">Borrar cuenta</a>
             </div>
     
         </div>
@@ -81,7 +81,7 @@
         
     <!--Fin-->
 
-    <form class="form1" action="{{route('edit.update')}}" method="POST">
+    <form class="form1" action="{{route('edit.update', $registro)}}" method="POST">
 
         @csrf
 
@@ -92,12 +92,8 @@
                 <h1 id="tituloAuxilitos">MIS PRIMEROS AUXILITOS</h1>
                 <h1 id="tituloRegistro">Registro</h1>
                 <div class="grupo">
-                    <input class="input" type="text" name="name" id="name" required value="{{auth()->user()->name}}"><span class="barra"></span>
+                    <input class="input" type="text" name="name" id="name" required value="{{$registro->name}}"><span class="barra"></span>
                     <label  class="label" for="">Nombre</label>
-                </div>
-                <div class="grupo">
-                    <input class="input" type="email" name="email" id="name" required value="{{auth()->user()->email}}"><span class="barra"></span>
-                    <label class="label" for="">Correo</label>
                 </div>
     
                 <div class="grupo">
@@ -121,17 +117,10 @@
     
                 
                 <div class="grupo">
-                    <input class="input" type="date" name="fechaNacimiento" id="name" required value="{{auth()->user()->fechaNacimiento}}"><span class="barra"></span>
+                    <input class="input" type="date" name="fechaNacimiento" id="name" required value="{{$registro->fechaNacimiento}}"><span class="barra"></span>
                     <label class="label" for="">Fecha de nacimiento</label>
                 </div>
-                <div class="grupo">
-                    <input class="input" type="password" name="password" id="name" required ><span class="barra"></span>
-                    <label class="label" for="">Contraseña</label>
-                </div>
-                <div class="grupo">
-                    <input class="input" type="password" name="password_confirmation" id="name" required ><span class="barra"></span>
-                    <label class="label" for="">Confirmar contraseña</label>
-                </div>
+
     
 
             <div>

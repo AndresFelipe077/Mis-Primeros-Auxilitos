@@ -16,8 +16,6 @@
             
             <form action="{{route('login.post')}}" method="POST" class="form">
 
-                {{route('home.index')}}
-
                 @csrf
 
                 <h1 id="titulo">Login</h1>
