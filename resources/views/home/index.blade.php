@@ -1,37 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head> <!--alt + l + o-->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis primeros auxilitos</title>
-    <link rel="shortcut icon" href="/Images/uno.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
+@extends('layouts.plantilla')
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+@section('title','Home')
 
-    <!--<script src= "javaScript.js" ></script>-->
-</head>
+
+@section('content')
 <body class="body-index">
-
-    <div class="div-padre">
-
-        <div class="titulo-hijo"><h1 id="Title-index">MIS PRIMEROS AUXILITOS</h1></div>
-        <div id="circulo"><img src="img/profile/profile.png"></div>
-
-    </div>
  
-
-    <section class="gallery">
-
-        <div>
-
-        <p>Curar herida</p>
-        <iframe class="gallery_img" src="https://www.youtube.com/embed/gufP4U6Xp8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                
-        </div>
+    <div class="gallery">
         
+        @foreach($contenidos as $contenido)                            
+                <div class="gallery_contenido">
+                    <div class="card-header">{{$contenido->title}}</div>
+                        <!-- Div del video -->
+                        <div>
+                            <p>{{$contenido->file}}</p>
+                            <iframe id="iframe-video-image" src="https://www.youtube.com/embed/gufP4U6Xp8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                        </div>          
+                        <div>
+                            <p><strong>Autor: </strong> Andres</p>
+                            <p>me gusta</p>
+                        </div>         
+                    <p>{{$contenido->description}}</p>
+                    <a href="{{route('home.edit', $contenido)}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-circle-fill text-success" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                        </svg>
+                    </a> 
+                </div>               
+        @endforeach
+        {{-- {{$contenidos->links()}} --}}
         
+        <!-- <iframe class="gallery_img" src="https://www.youtube.com/embed/gufP4U6Xp8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rKIMDP4BQMI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/5mWxmgcr8KA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -43,36 +42,10 @@
         <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+     
 
+</div>
 
-    </section>
+@endsection
 
-
-    <!-- The navigation menu -->
-<div class="navbar1">
-    <div class="hijos-navbar">
-        <img src="img/menu/home.png" onclick="location.href=''">
-    </div>
-
-    <div class="hijos-navbar">
-        <img src="img/menu/challengue.png" onclick="location.href=''">
-    </div>
-
-    <div class="hijos-navbar">
-        <img src="img/menu/microphone.png" onclick="location.href=''">
-    </div>
-
-    <div class="hijos-navbar">
-        <img src="img/menu/settings2.png" onclick="location.href='{{route('home.ajustes')}}'">
-    </div>
-
-
-
-    
-
-  </div>
-
-  
-
-</body>

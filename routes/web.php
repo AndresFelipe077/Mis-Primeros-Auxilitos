@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\UserController;
 use Illuminate\Auth\Middleware\Authenticate;
 
@@ -18,7 +17,28 @@ use Illuminate\Auth\Middleware\Authenticate;
 |
 */
 
-Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+Route::controller(HomeController::class)->group(function(){
+
+    //Vista home de videos
+    Route::get('/home','index')->name('home.index');
+
+    Route::get('home/create/contenido','create')->name('home.create');
+
+    Route::post('home/store/contenido', 'store')->name('store.contenido');
+
+    Route::get('/home/{contenido}/edit','edit')->name('home.edit');
+
+    Route::put('/home/{contenido}','update')->name('edit.contenido.update');
+
+    //Acceder a vista ajustes
+    Route::get('home/ajustes/','ajustes')->name('home.ajustes');
+
+    Route::delete('edit/{contenido}','destroy')->name('registro.contenido.destroy');
+
+
+});
+
+
 
 Route::controller(UserController::class)->group(function(){
 
@@ -35,10 +55,8 @@ Route::controller(UserController::class)->group(function(){
 
     Route::put('edit/{registro}', 'update')->name('edit.update');
 
-    //Acceder a vista ajustes
-    Route::get('home/ajustes','ajustes')->name('home.ajustes');
 
-    Route::get('logout','logout')->name('logout');
+    Route::get('logout/','logout')->name('logout');
 
     Route::delete('edit/{registro}','destroy')->name('registro.destroy');
 

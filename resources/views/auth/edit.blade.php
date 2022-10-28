@@ -21,7 +21,7 @@
         </div>
 
         <div class="container-hijo-1">
-            <img class="imagen-perfil-perfil" src="Images/profile/smith.jpg" width="250px" height="250px">
+            <img type="file" class="imagen-perfil-perfil" src="Images/profile/smith.jpg" width="250px" height="250px">
         </div>
 
         <div class="container-hijo1">
@@ -29,11 +29,9 @@
         </div>
 
         <div class="container-hijo-1">
-
-            <button type="submit" id="btn-cambiar-imagen-perfil">
-                Cambiar imagen
-            </button>
-              
+            
+            <input type="file" id="btn-cambiar-imagen-perfil" name="imagen" >
+            
         </div>
         
     </div>
@@ -74,7 +72,7 @@
             <form method="POST" action="{{route('registro.destroy', $registro)}}">
                 @csrf
                 @method('delete')
-                <button type="submit" class="a-borrar-cuenta" onclick="return confirm('¿Seguro que deseas eliminar tu cuenta?')">Borrar cuenta</button>
+                <button type="submit" id="a-borrar-cuenta" onclick="return confirm('¿Seguro que deseas eliminar tu cuenta?')">Borrar cuenta</button>
             </form>
     
         </div>

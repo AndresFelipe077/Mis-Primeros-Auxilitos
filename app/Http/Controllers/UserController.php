@@ -40,7 +40,6 @@ class UserController extends Controller
     }
 
     //Registro
-
     public function showRegister()
     {
         return view('auth.register');
@@ -53,7 +52,6 @@ class UserController extends Controller
     }
 
     //Editar
-
     public function edit(User $registro)
     {
 
@@ -63,7 +61,6 @@ class UserController extends Controller
         
     }
 
-    
     public function update(Request $request, User $registro)
     {
         $registro->fill($request->all());
@@ -80,9 +77,7 @@ class UserController extends Controller
         return redirect()->route('auth.edit', compact('registro'));
     }
 
-
     //Logout
-
     public function logout()
     {
         Session::flush();//Para liberar
@@ -93,11 +88,6 @@ class UserController extends Controller
 
     }
 
-    public function ajustes()
-    {
-        return view('home.ajustes');
-    }
-
     public function destroy(User $registro)
     {
         $registro->delete();
@@ -105,103 +95,4 @@ class UserController extends Controller
         return redirect()->route('login');
     }
 
-
 }//Fin UserController
-/*
-
-    //Login
-    public function index()
-    {
-        //$registro = Registro::all();
-        
-
-    return view('registro.index'/*, compact('registro'));
-    }
-
-    public function validar(Request $request)
-    {
-        /*
-        // Retrieve the currently authenticated user...
-        $user = Auth::user();
- 
-        // Retrieve the currently authenticated user's ID...
-        $id = Auth::id();
-
-        if (Auth::check()) {
-            // The user is logged in...
-        }
-
-
-        $credentials = $request->validate([
-            'email' => ['required', 'correo'],
-            'contrasena' => ['required'],
-        ]);
-
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
-            return redirect()->intended('registro.create');
-        }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
-
-
-    }
-
-    protected function redirectTo($request)
-    {
-        return route('index');
-    }
-
-    
-
-    //Registro
-    public function create()
-    {
-        return view('registro.create');
-    }
-
-    public function store(Request $request){
-  
-        $registro = new Registro();
-
-        $registro->nombre              = $request->nombre;
-        $registro->correo              = $request->correo;
-        $registro->genero              = $request->genero;
-        $registro->fechaNacimiento     = $request->fechaNacimiento;
-        $registro->contrasena          = $request->contrasena;
-        $registro->confirmarContrasena = $request->confirmarContrasena;
-
-        $registro->save();
-
-
-        return redirect()->route('registro.index');
-
-    }
-
-
-    public function edit(Registro $registro)
-    {
-        
-        // return $registro;
-        return view('registro.edit', compact('registro'));
-    }
-
-    public function update(Request $request, Registro $registro)
-    {
-        
-        $registro->nombre = $request->nombre;
-        $registro->correo = $request->correo;
-        $registro->genero = $request->genero;
-        $registro->fechaNacimiento = $request->fechaNacimiento;
-        $registro->contrasena = $request->contrasena;
-        $registro->confirmarContrasena = $request->confirmarContrasena;
-
-        $registro->save();
-
-        return redirect()->route('registro.index');
-        
-    }
-*/

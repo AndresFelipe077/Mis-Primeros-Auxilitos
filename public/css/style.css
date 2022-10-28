@@ -19,60 +19,12 @@ class == .
 
 
 .body-index{
-
     margin: 0%;
     padding:0;
     font-family: 'DynaPuff', cursive;
     background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-
-}
-/*
-
-
-
-#titulo{
-
-    margin: 0 auto;
-    padding: 0;
-    text-align:absolute;
-    background-color:yellow;
-    border-radius:50px;
-    color:blue;
-    text-shadow:1px 3px 3px;
-    
-
 }
 
-
-
-.nav{
-
-   background:red;
-
-}
-
-
-
-#derecha{
-
-    float:left;
-    margin:10px;
-    list-style:none;
-    text-decoration:none;
-    color:white;
-    background-color:red;
-    border-radius:10px;
-
-}
-
-#opciones-encabezado{
-
-    color:white;
-    text-decoration:none;
-
-}
-*/
 
 .div-padre{
 
@@ -85,8 +37,6 @@ class == .
     animation-duration:2s;
     height:5em;
     top: 0;
-
-
 }
 
 @keyframes animacionDivTitle {
@@ -116,6 +66,18 @@ class == .
     text-shadow: 3px 5px 5px black;
     text-align:center;
 
+}
+
+.add-content
+{
+
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    border-radius:50px;
+    display:flex;
+    position:relative;
+    top:0;
+    right:0;
 
 }
 
@@ -132,9 +94,7 @@ class == .
     top:0;
     right:0;
     cursor: pointer;
-    /*background-image: url(../Images/profile/profile.png);*/
     
-
 }
 
 @media screen and (min-width:500px){
@@ -162,17 +122,25 @@ class == .
     flex-wrap: wrap;
     gap: 2em;
     border-radius: 10px;
+    margin-top:4em;
     
 }
 
-.gallery_img{
-    min-width: 200px;
-    flex:10em;
-    border-radius:10px;
-    height: 300px;
-    width: 300px;
-    margin-top: 2.5em;
-    
+.gallery_contenido{
+
+    background: white;
+    color:blue;
+    border-radius: 10px;
+    width: 280px;
+    padding: 13px;
+   
+}
+
+#iframe-video-image
+{
+    border-radius: 10px;
+    height: 250px;
+    width: 250px;
 }
 
 
@@ -391,31 +359,6 @@ class == .
     pointer-events: none;
     
 }
-
-.label1{
-    color:var(--colorTextos);
-}
-
-
-.custom-checkbox {
-    position: relative;
-    cursor: pointer;
-}
-
-.label-genero{ 
-    color:var(--colorTextos);
-    font-size:16px;
-    
-}
-.label-genero-edit{ 
-    color:var(--colorTextoPlaceholder);
-    font-size:16px;
-    
-}
-
-
-
-
 
 .input:focus~label,
 .input:valid~label{
