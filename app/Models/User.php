@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use App\SocialProfile;
 
 class User extends Authenticatable
 {
@@ -26,6 +27,9 @@ class User extends Authenticatable
         'genero',
         'fechaNacimiento',
         'password',
+        'avatar',
+        'external_id', 
+        'external_auth',
     ];
 
     /**
@@ -68,6 +72,15 @@ class User extends Authenticatable
         );
         
     }
+
+
+    // //Relaciones uno a muchos
+    // public function socialProfiles()
+    // {
+    //     return $this->hasMany(SocialProfile::class);
+    // }
+
+
 
 
 }

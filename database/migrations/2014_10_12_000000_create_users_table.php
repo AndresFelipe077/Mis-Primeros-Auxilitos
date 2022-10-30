@@ -17,12 +17,14 @@ return new class extends Migration
             $table->id();
 
             $table->string('name',50);
-            $table->string('imagen')->default('')->nullable();
             $table->string('email',50)->unique();
-            $table->string('genero',20);
-            $table->date('fechaNacimiento');
+            $table->string('provider_id')->nullable();
+            $table->string('avatar')->nullable();
+            $table->string('genero',20)->nullable();
+            $table->date('fechaNacimiento')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
+            
             $table->rememberToken();
             
             $table->timestamps();

@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
-use App\Models\User;
 use Illuminate\Support\Facades\Session;
-//Para la fecha
-use Carbon\Carbon;
+
+use App\Models\SocialProfile;
+use App\Models\User;
+
 
 class UserController extends Controller
 {
@@ -94,5 +96,97 @@ class UserController extends Controller
 
         return redirect()->route('login');
     }
+
+
+    //Logueo con redes sociales
+
+    //Google login
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    //Google callback
+    public function handleGoogleCallback()
+    {
+        $user = Socialite::driver('google')->user();
+
+        $this->_registerOrLoginUser($user);
+
+        //Retorna a la vista de home cuando se loguee
+        return redirect()->route('home.index');
+
+        /*
+
+        $user = User::where('email', $userSocialite->getEmail())->first();
+        
+        if(!$user)
+        {
+            // Auth::login($userSocialite);
+            $user = User::create([
+                'name' => $userSocialite->getName(),
+                'avatar' => $userSocialite->getAvatar(),
+                'email' => $userSocialite->getEmail(),
+            ]);
+        }
+        
+
+            $social_profile = SocialProfile::where('social_id', $userSocialite->getId())->first();
+                                        //  ->where('social_name', $driver)->first();
+    
+            
+            if(!$social_profile)
+            {
+                //Sino existe registro se registra con lo de abajo
+                SocialProfile::create([
+                    'user_id' => $user->id,
+                    'social_id' => $userSocialite->getId,
+                ]);
+            }
+
+            // auth()->login($user);
+            
+            Auth::login($user);
+            return redirect()->route('home.index');
+
+            */
+
+    }
+
+    //Facebook login
+    public function redirectToFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    //Facebook callback
+    public function handleFacebookCallback()
+    {
+        $user = Socialite::driver('facebook')->user();  
+        
+        $this->_registerOrLoginUser($user);
+
+        //Retorna a la vista de home cuando se loguee
+        return redirect()->route('home.index');
+
+    }
+
+    protected function _registerOrLoginUser($data)
+    {
+        $user = User::where('email', '=', $data->email)->first();
+        if(!$user)
+        {
+            $user->name = $data->name;
+            $user->email = $data->email;
+            $user->provider_id = $data->id;
+            $user->avatar = $data->avatar;
+            $user->save();
+        }
+
+        Auth::login($user);
+
+    }
+
+
 
 }//Fin UserController

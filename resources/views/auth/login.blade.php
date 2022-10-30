@@ -42,8 +42,8 @@
                 </div>
 
                 <div class="grupo">
-                    <img class="img-btn-Facebook" src="{{ asset('img/Facebook.svg') }}" onclick="location.href=''">
-                    <img class="img-btn-Google" src="{{ asset('img/Google.svg') }}" onclick="location.href=''">
+                    <img class="img-btn-Facebook" src="{{ asset('img/Facebook.svg') }}" onclick="location.href='{{route('login.facebook')}}'">
+                    <img class="img-btn-Google" src="{{ asset('img/Google.svg') }}" onclick="location.href='{{route('login.google')}}'">
                 </div>
 
                 

@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Auth\Middleware\Authenticate;
+use App\Models\User;
+use App\Models\SocialProfile;
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -55,11 +59,21 @@ Route::controller(UserController::class)->group(function(){
 
     Route::put('edit/{registro}', 'update')->name('edit.update');
 
-
     Route::get('logout/','logout')->name('logout');
 
     Route::delete('edit/{registro}','destroy')->name('registro.destroy');
 
+    //Registro exclusivo con google
+
+    Route::get('/login/google', 'redirectToGoogle')->name('login.google');
+     
+    Route::get('/google/callback', 'handleGoogleCallback');
+
+    //FACEBOOK
+
+    Route::get('/login/facebook', 'redirectToFacebook')->name('login.facebook');
+
+    Route::get('/facebook/callback', 'handleFacebookCallback');
 
 });
 
