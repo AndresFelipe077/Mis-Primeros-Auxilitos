@@ -11,11 +11,15 @@ use Illuminate\Support\Facades\Session;
 
 use App\Models\SocialProfile;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
     public function show(){
+        // if(Auth::check())
+        // {
+        //     return view('home.index');
+        // }
         return view('auth.login');
     }
 

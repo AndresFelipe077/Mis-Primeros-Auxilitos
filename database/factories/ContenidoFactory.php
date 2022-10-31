@@ -19,7 +19,7 @@ class ContenidoFactory extends Factory
         return [
 
             'title'       => $this -> faker -> randomElement(['Curar Heridas','Botiquin','Accidentes']),
-            'file'        => $this -> faker ->text('50'),
+            'url'        => $this -> faker ->text('50'),
             'description' => $this -> faker ->text('200'),
             'created_at'  => now(),
 

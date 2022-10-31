@@ -17,9 +17,10 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        
         return [
-            'name'              => fake()->name(),
-            'email'             => fake()->unique()->safeEmail(),
+            'name'              => fake()-> name(),
+            'email'             => fake()-> unique()->safeEmail(),
             'genero'            => $this -> faker -> randomElement(['Masculino','Femenino','Otro']),
             'fechaNacimiento'   => $this -> faker -> randomElement(['2003/12/13','2002/12/16','2005/08/13','2022/02/14']),
             'email_verified_at' => now(),
@@ -27,6 +28,10 @@ class UserFactory extends Factory
             'remember_token'    => Str::random(10),
         ];
 
+    }
+
+    public function userNameEmail($email){
+        return Str::of($email)->before('@')->replaceMatches('/[0-9]+/', '')->headline();
     }
 
     /**

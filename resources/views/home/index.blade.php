@@ -8,7 +8,7 @@
  
     <div class="gallery">
         
-        @foreach($contenidos as $contenido)                            
+        @foreach($contenidos as $contenido)                         
                 <div class="gallery_contenido">
                     <div class="card-header">{{$contenido->title}}</div>
                         <!-- Div del video -->

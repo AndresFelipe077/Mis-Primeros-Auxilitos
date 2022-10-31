@@ -9,7 +9,7 @@
 <a id="a-regresar-perfil" href="{{route('home.index')}}">regresar</a>
 
     <h1>Vista crear videos</h1>
-    <form action="{{route('store.contenido')}}" method="POST">
+    <form action="{{route('store.contenido')}}" method="POST" enctype="multipart/form-data">
 
         @csrf
 
@@ -22,7 +22,12 @@
                 </div>
                 <div>
                     <label for="">Video y/o imagen</label>
-                    <input type="file" name="file" value="" required>
+                    <input type="file" name="file" value="" accept="image/*" required>
+                    <br>
+                    @error('file')
+                        <small class="text-danger">{{$message}}</small>
+                    @enderror
+
                 </div>
                 <div>
                     <label for="">Descripción</label>

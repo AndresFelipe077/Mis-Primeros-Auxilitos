@@ -6,7 +6,7 @@
 
 <br><br><br><br><br><br>
     <h1>Vista crear videos</h1>
-    <form action="{{route('edit.contenido.update', $contenido)}}" method="POST">
+    <form action="{{route('edit.contenido.update', $contenido)}}" method="POST" enctype="multipart/form-data">
 
         @csrf
 
@@ -17,16 +17,31 @@
             <div class="card-body">
                 <div>
                     <label for="">Titulo</label>
-                    <input type="text" name="title" value="{{$contenido->title}}" required>
+                    <input type="text" name="title" value="{{old('title',$contenido->title)}}" required>
                 </div>
+                @error('title')
+                <br>
+                    <small>* {{$message}}</small>
+                <br>
+                @enderror
                 <div>
                     <label for="">Video y/o imagen</label>
-                    <input type="file" name="file" value="{{$contenido->file}}" required>
+                    <input type="file" name="file" value="{{old('file',$contenido->title)}}" required>
                 </div>
+                @error('file')
+                <br>
+                    <small>* {{$message}}</small>
+                <br>
+                @enderror
                 <div>
                     <label for="">Descripción</label>
-                    <input type="text" name="description" value="{{$contenido->description}}" required>
+                    <input type="text" name="description" value="{{old('description',$contenido->title)}}" required>
                 </div>
+                @error('description')
+                <br>
+                    <small>* {{$message}}</small>
+                <br>
+                @enderror
                 <button type="submit">Actualizar</button>
             </div>
         </div>
