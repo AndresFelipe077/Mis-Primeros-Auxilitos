@@ -2,6 +2,7 @@
 
 @section('title','Home')
 
+{{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
 
 @section('content')
 <body class="body-index">
@@ -13,8 +14,7 @@
                     <div class="card-header">{{$contenido->title}}</div>
                         <!-- Div del video -->
                         <div>
-                            {{-- {{$contenido->url}} --}}
-                            <img class="img-index" src="{{ asset($contenido->url) }}" alt="" width="200px" height="200px">
+                            <img class="border border-primary rounded" src="{{ asset($contenido->url) }}" alt="" width="250px" height="300px">
                             {{-- <iframe id="iframe-video-image" src="https://www.youtube.com/embed/gufP4U6Xp8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  --}}
                         </div>          
                         <div>

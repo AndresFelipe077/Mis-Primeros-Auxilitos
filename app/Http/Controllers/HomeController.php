@@ -65,7 +65,6 @@ class HomeController extends Controller
 
     public function edit(Contenido $contenido)
     {
-        // $contenido::where('url', auth()->user()->id)->paginate(5);
         return view('home.edit',compact('contenido'));
     }
 

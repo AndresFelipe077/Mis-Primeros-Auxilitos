@@ -21,7 +21,7 @@
         </div>
 
         <div class="container-hijo-1">
-            <img type="file" class="imagen-perfil-perfil" src="Images/profile/smith.jpg" width="250px" height="250px">
+            <img type="file" class="imagen-perfil-perfil" src="{{asset($registro->avatar)}}" width="250px" height="250px">
         </div>
 
         <div class="container-hijo1">
@@ -29,9 +29,9 @@
         </div>
 
         <div class="container-hijo-1">
-            
-            <input type="file" id="btn-cambiar-imagen-perfil" name="imagen" >
-            
+
+            <input type="file" id="btn-cambiar-imagen-perfil" name="avatar" value="" accept="image/*" required>
+                     
         </div>
         
     </div>
@@ -42,7 +42,7 @@
     <div class="container-padre"> <!--inicio-->
         
         <div class="container-1">
-
+            
             <div class="container-perfil-datos">
                 <label  for="">Nombre: {{$registro->name}}</label>
             </div>
@@ -91,6 +91,12 @@
             <div class="form">
                 <h1 id="tituloAuxilitos">MIS PRIMEROS AUXILITOS</h1>
                 <h1 id="tituloRegistro">Registro</h1>
+
+                <div class="grupo">
+                    <input type="file" name="file" value="{{old('avatar',$registro->url)}}" accept="image/*" required>
+                    <label class="label" for="">Cambiar imagen</label>
+                </div>
+
                 <div class="grupo">
                     <input class="input" type="text" name="name" id="name" required value="{{$registro->name}}"><span class="barra"></span>
                     <label  class="label" for="">Nombre</label>
