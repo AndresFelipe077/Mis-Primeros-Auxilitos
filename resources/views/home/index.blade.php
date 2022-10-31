@@ -13,8 +13,9 @@
                     <div class="card-header">{{$contenido->title}}</div>
                         <!-- Div del video -->
                         <div>
-                            <p>{{$contenido->file}}</p>
-                            <iframe id="iframe-video-image" src="https://www.youtube.com/embed/gufP4U6Xp8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                            {{-- {{$contenido->url}} --}}
+                            <img class="img-index" src="{{ asset($contenido->url) }}" alt="" width="200px" height="200px">
+                            {{-- <iframe id="iframe-video-image" src="https://www.youtube.com/embed/gufP4U6Xp8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  --}}
                         </div>          
                         <div>
                             <p><strong>Autor: </strong> Andres</p>
@@ -28,7 +29,8 @@
                     </a> 
                 </div>               
         @endforeach
-        {{-- {{$contenidos->links()}} --}}
+        
+        
         
         <!-- <iframe class="gallery_img" src="https://www.youtube.com/embed/gufP4U6Xp8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rKIMDP4BQMI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -46,6 +48,7 @@
      
 
 </div>
+{{$contenidos->links()}}
 
 @endsection
 

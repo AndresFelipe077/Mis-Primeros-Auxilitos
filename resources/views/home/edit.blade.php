@@ -13,8 +13,10 @@
         @method('put')
 
         <div class="card">
+            
             <div class="card-header">CREAR CONTENIDO</div>
             <div class="card-body">
+                <a id="a-regresar-perfil" href="{{route('home.index')}}">regresar</a>
                 <div>
                     <label for="">Titulo</label>
                     <input type="text" name="title" value="{{old('title',$contenido->title)}}" required>
@@ -26,7 +28,8 @@
                 @enderror
                 <div>
                     <label for="">Video y/o imagen</label>
-                    <input type="file" name="file" value="{{old('file',$contenido->title)}}" required>
+                    <img src="{{ asset($contenido->url) }}" width="100px" height="100px">
+                    <input type="file" name="file" value="{{old('file',$contenido->url)}}" accept="image/*" required>
                 </div>
                 @error('file')
                 <br>
@@ -35,7 +38,7 @@
                 @enderror
                 <div>
                     <label for="">Descripción</label>
-                    <input type="text" name="description" value="{{old('description',$contenido->title)}}" required>
+                    <input type="text" name="description" value="{{old('description',$contenido->description)}}" required>
                 </div>
                 @error('description')
                 <br>

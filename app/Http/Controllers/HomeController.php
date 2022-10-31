@@ -17,8 +17,7 @@ class HomeController extends Controller
     //Vista home de videos
     public function index()
     {
-        $contenidos = Contenido::orderBy('id','desc')->paginate();
-        // return $contenido;
+        $contenidos = Contenido::orderBy('id','desc')->paginate(5);
         return view('home.index', compact('contenidos'));
     }
 
@@ -36,22 +35,29 @@ class HomeController extends Controller
     public function store(Request $request)
     {
 
-        $contenido = new Contenido();
-        $contenido->title = $request->title;
+        $request->validate([
+            'title'        => 'required|max:50',
+            'file'         => 'required|image',
+            'description'  => 'required'
+        ]);
 
         $nombre = Str::random(10) . $request->file('file')->getClientOriginalName();
 
         $ruta = storage_path() . '\app\public\images/' . $nombre;
+
+        
 
         Image::make($request->file('file'))
             ->resize(800, null, function($constraint){
                 $constraint->aspectRatio();
             })
             ->save($ruta);
-        
-        $contenido->url = $request->file = $ruta;
-        $contenido->description = $request->description;
-        $contenido->save([$ruta]);
+
+        Contenido::create([
+            'title'       => $request->title,
+            'url'         => '/storage/images/' . $nombre,
+            'description' => $request->description,
+        ]);
 
         return redirect()->route('home.index');
     }
@@ -59,6 +65,7 @@ class HomeController extends Controller
 
     public function edit(Contenido $contenido)
     {
+        // $contenido::where('url', auth()->user()->id)->paginate(5);
         return view('home.edit',compact('contenido'));
     }
 
@@ -66,13 +73,24 @@ class HomeController extends Controller
     {
         $request -> validate([
             'title'        => 'required|max:50',
-            'file'         => 'required',
+            'file'         => 'required|image',
             'description'  => 'required'
         ]);
-            
+        
+        $nombre = Str::random(10) . $request->file('file')->getClientOriginalName();
+
+        $ruta = storage_path() . '\app\public\images/' . $nombre;
+
+        
+
+        Image::make($request->file('file'))
+            ->resize(800, null, function($constraint){
+                $constraint->aspectRatio();
+            })
+            ->save($ruta);
 
         $contenido->title = $request->title;
-        $contenido->file = $request->file;
+        $contenido->url = '/storage/images/' . $nombre;
         $contenido->description = $request->description;
         
         $contenido->save();

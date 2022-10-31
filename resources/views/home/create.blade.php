@@ -2,6 +2,9 @@
 
 @section('title','Create')
 
+
+@include('layouts.partials.header')
+
 @section('content')
 
 <br><br><br><br><br><br>
@@ -38,6 +41,7 @@
         </div>
     </form>
     
-
+    
 
 @endsection
+@include('layouts.partials.footer')

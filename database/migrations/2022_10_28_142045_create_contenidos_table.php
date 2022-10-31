@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('contenidos', function (Blueprint $table) {
             $table->id();
-            $table->string('title',50)->nullable();
-            $table->string('url')->nullable();
-            $table->string('description',200)->nullable();
+            $table->string('title',50);
+            $table->string('url');
+            $table->string('description',200);
             $table->timestamps();
         });
     }
