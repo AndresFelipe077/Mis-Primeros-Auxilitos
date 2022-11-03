@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <!--favicon-->
-    <link rel="shortcut icon" href="img/uno.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/botiquin.png" type="image/x-icon">
 
     <!--estilos-->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -22,7 +22,7 @@
     
 </head>
 <body>
-
+    @auth
     <!--header-->
     @include('layouts.partials.header')
     
@@ -37,6 +37,13 @@
     <!--Script-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    
+    @endauth
+
+    @guest
+
+    <a href="{{route('login')}}"><strong>Inicia sesion</strong></a>
+
+    @endguest
+
 </body>
 </html>

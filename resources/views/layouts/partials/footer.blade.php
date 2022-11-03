@@ -6,11 +6,11 @@
         </div>
     
         <div class="hijos-navbar">
-            <img src="img/menu/challengue.png" onclick="location.href=''">
+            <img src="img/menu/challengue2.png" onclick="location.href=''">
         </div>
     
         <div class="hijos-navbar">
-            <img src="img/menu/microphone.png" onclick="location.href=''">
+            <img src="img/menu/microphone2.png" onclick="location.href=''">
         </div>
     
         <div class="hijos-navbar">

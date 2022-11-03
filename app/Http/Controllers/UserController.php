@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Session;
+use App\Models\Contenido;
 
 use App\Models\SocialProfile;
 use App\Models\User;
@@ -15,11 +16,13 @@ use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
-    public function show(){
-        // if(Auth::check())
-        // {
-        //     return view('home.index');
-        // }
+    public function show()
+    {
+        if(Auth::check())
+        {
+            $contenidos = Contenido::orderBy('id','desc')->paginate(5);
+            return view('home.index', compact('contenidos'));
+        }
         return view('auth.login');
     }
 
@@ -48,6 +51,11 @@ class UserController extends Controller
     //Registro
     public function showRegister()
     {
+        if(Auth::check())
+        {
+            $contenidos = Contenido::orderBy('id','desc')->paginate(5);
+            return view('home.index', compact('contenidos'));
+        }
         return view('auth.register');
     }
 
@@ -69,6 +77,13 @@ class UserController extends Controller
 
     public function update(Request $request, User $registro)
     {
+
+        if(Auth::check())
+        {
+            $contenidos = Contenido::orderBy('id','desc')->paginate(5);
+            return view('home.index', compact('contenidos'));
+        }
+
         $registro->fill($request->all());
         
         /*
@@ -104,92 +119,93 @@ class UserController extends Controller
 
     //Logueo con redes sociales
 
-    //Google login
-    public function redirectToGoogle()
-    {
-        return Socialite::driver('google')->redirect();
-    }
+    // //Google login
+    // public function redirectToGoogle()
+    // {
+    //     return Socialite::driver('google')->redirect();
+    // }
 
-    //Google callback
-    public function handleGoogleCallback()
-    {
-        $user = Socialite::driver('google')->user();
+    // //Google callback
+    // public function handleGoogleCallback()
+    // {
+    //     $user = Socialite::driver('google')->user();
 
-        $this->_registerOrLoginUser($user);
+    //     $this->_registerOrLoginUser($user);
 
-        //Retorna a la vista de home cuando se loguee
-        return redirect()->route('home.index');
+    //     //Retorna a la vista de home cuando se loguee
+    //     return redirect()->route('home.index');
 
-        /*
+    //     /*
 
-        $user = User::where('email', $userSocialite->getEmail())->first();
+    //     $user = User::where('email', $userSocialite->getEmail())->first();
         
-        if(!$user)
-        {
-            // Auth::login($userSocialite);
-            $user = User::create([
-                'name' => $userSocialite->getName(),
-                'avatar' => $userSocialite->getAvatar(),
-                'email' => $userSocialite->getEmail(),
-            ]);
-        }
+    //     if(!$user)
+    //     {
+    //         // Auth::login($userSocialite);
+    //         $user = User::create([
+    //             'name' => $userSocialite->getName(),
+    //             'avatar' => $userSocialite->getAvatar(),
+    //             'email' => $userSocialite->getEmail(),
+    //         ]);
+    //     }
         
 
-            $social_profile = SocialProfile::where('social_id', $userSocialite->getId())->first();
-                                        //  ->where('social_name', $driver)->first();
+    //         $social_profile = SocialProfile::where('social_id', $userSocialite->getId())->first();
+    //                                     //  ->where('social_name', $driver)->first();
     
             
-            if(!$social_profile)
-            {
-                //Sino existe registro se registra con lo de abajo
-                SocialProfile::create([
-                    'user_id' => $user->id,
-                    'social_id' => $userSocialite->getId,
-                ]);
-            }
+    //         if(!$social_profile)
+    //         {
+    //             //Sino existe registro se registra con lo de abajo
+    //             SocialProfile::create([
+    //                 'user_id' => $user->id,
+    //                 'social_id' => $userSocialite->getId,
+    //             ]);
+    //         }
 
-            // auth()->login($user);
+    //         // auth()->login($user);
             
-            Auth::login($user);
-            return redirect()->route('home.index');
+    //         Auth::login($user);
+    //         return redirect()->route('home.index');
 
-            */
+    //         */
 
-    }
+    // }
 
-    //Facebook login
-    public function redirectToFacebook()
-    {
-        return Socialite::driver('facebook')->redirect();
-    }
+    // //Facebook login
+    // public function redirectToFacebook()
+    // {
+    //     return Socialite::driver('facebook')->redirect();
+    // }
 
-    //Facebook callback
-    public function handleFacebookCallback()
-    {
-        $user = Socialite::driver('facebook')->user();  
+    // //Facebook callback
+    // public function handleFacebookCallback()
+    // {
+
+    //     $user = Socialite::driver('facebook')->user();  
         
-        $this->_registerOrLoginUser($user);
+    //     $this->_registerOrLoginUser($user);
 
-        //Retorna a la vista de home cuando se loguee
-        return redirect()->route('home.index');
+    //     //Retorna a la vista de home cuando se loguee
+    //     return redirect()->route('home.index');
 
-    }
+    // }
 
-    protected function _registerOrLoginUser($data)
-    {
-        $user = User::where('email', '=', $data->email)->first();
-        if(!$user)
-        {
-            $user->name = $data->name;
-            $user->email = $data->email;
-            $user->provider_id = $data->id;
-            $user->avatar = $data->avatar;
-            $user->save();
-        }
+    // protected function _registerOrLoginUser($data)
+    // {
+    //     $user = User::where('email', '=', $data->email)->first();
+    //     if(!$user)
+    //     {
+    //         $user->name = $data->name;
+    //         $user->email = $data->email;
+    //         $user->provider_id = $data->id;
+    //         $user->avatar = $data->avatar;
+    //         $user->save();
+    //     }
 
-        Auth::login($user);
+    //     Auth::login($user);
 
-    }
+    // }
 
 
 

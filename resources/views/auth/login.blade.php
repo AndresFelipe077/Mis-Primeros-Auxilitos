@@ -21,13 +21,23 @@
                 <h1 id="titulo">Login</h1>
                 <div class="grupo">
                     <input type="email" id="correo" name="email" placeholder="Correo" required>
+                @error('email')
+                <br>
+                    <small>* {{$message}}</small>
+                <br>
+                @enderror
                 </div>
                 <div class="grupo">
                     <input type="password" id="contrasena" name="password" placeholder="Contraseña" required></input>
+                @error('password')
+                    <br>
+                        <small>* {{$message->auth}}</small>
+                    <br>
+                @enderror
                 </div>              
 
                 <div class="grupo">
-                    <button id="btn_loguearse" class="submit" onclick="location.href=''">ACEPTAR</button>
+                    <button id="btn_loguearse" class="submit">ACEPTAR</button>
                 </div>
 
                 <div class="content_password_Olvida">
@@ -42,15 +52,15 @@
                 </div>
 
                 <div class="grupo">
-                    <img class="img-btn-Facebook" src="{{ asset('img/Facebook.svg') }}" onclick="location.href='{{route('login.facebook')}}'">
-                    <img class="img-btn-Google" src="{{ asset('img/Google.svg') }}" onclick="location.href='{{route('login.google')}}'">
+                    <img class="img-btn-Facebook" src="{{ asset('img/Facebook.svg') }}" onclick="location.href='https://es-la.facebook.com/login/device-based/regular/login/'">
+                    <img class="img-btn-Google" src="{{ asset('img/Google.svg') }}" onclick="location.href='https://accounts.google.com/v3/signin/identifier?dsh=S1426936774%3A1667332891017678&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession'">
                 </div>
 
                 
 
                 <footer class="footer">
 
-                    copyright &copy SENIORS_SENA;
+                    copyright &copy Mis Primeros Auxilitos;
             
                 </footer>
 

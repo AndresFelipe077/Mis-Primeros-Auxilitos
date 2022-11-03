@@ -12,7 +12,7 @@
 <a id="a-regresar-perfil" href="{{route('home.index')}}">regresar</a>
 
     <h1>Vista crear videos</h1>
-    <form action="{{route('store.contenido')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('contenido.store')}}" method="POST" enctype="multipart/form-data">
 
         @csrf
 
@@ -22,19 +22,41 @@
                 <div>
                     <label for="">Titulo</label>
                     <input type="text" name="title" value="" required>
+                    @error('title')
+                        <br>
+                            <small class="text-danger">{{$message}}</small>
+                        <br>
+                    @enderror
                 </div>
                 <div>
                     <label for="">Video y/o imagen</label>
                     <input type="file" name="file" value="" accept="image/*" required>
                     <br>
                     @error('file')
-                        <small class="text-danger">{{$message}}</small>
+                        <br>
+                            <small class="text-danger">{{$message}}</small>
+                        <br>
                     @enderror
-
+                </div>
+                <div>
+                    <label for="">Autor</label>
+                    <input type="text" name="autor" value="" required>
+                    @error('autor')
+                        <br>
+                            <small class="text-danger">{{$message}}</small>
+                        <br>
+                    @enderror      
                 </div>
                 <div>
                     <label for="">Descripción</label>
                     <input type="text" name="description" value="" required>
+                    <br>
+                    @error('description')
+                        <br>
+                            <small class="text-danger">{{$message}}</small>
+                        <br>
+                    @enderror
+                    <br>
                 </div>
                 <button type="submit">Subir</button>
             </div>
@@ -42,6 +64,5 @@
     </form>
     
     
-
-@endsection
 @include('layouts.partials.footer')
+@endsection

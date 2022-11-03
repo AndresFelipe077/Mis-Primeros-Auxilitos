@@ -6,49 +6,53 @@
 
 @section('content')
 <body class="body-index">
- 
+
     <div class="gallery">
         
-        @foreach($contenidos as $contenido)                         
-                <div class="gallery_contenido">
-                    <div class="card-header">{{$contenido->title}}</div>
-                        <!-- Div del video -->
-                        <div>
-                            <img class="border border-primary rounded" src="{{ asset($contenido->url) }}" alt="" width="250px" height="300px">
-                            {{-- <iframe id="iframe-video-image" src="https://www.youtube.com/embed/gufP4U6Xp8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  --}}
-                        </div>          
-                        <div>
-                            <p><strong>Autor: </strong> Andres</p>
-                            <p>me gusta</p>
-                        </div>         
-                    <p>{{$contenido->description}}</p>
-                    <a href="{{route('home.edit', $contenido)}}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-circle-fill text-success" viewBox="0 0 16 16">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                        </svg>
-                    </a> 
-                </div>               
-        @endforeach
-        
-        
-        
-        <!-- <iframe class="gallery_img" src="https://www.youtube.com/embed/gufP4U6Xp8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rKIMDP4BQMI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/5mWxmgcr8KA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        @foreach($contenidos as $contenido)                     
+                {{-- <div class="container mx-md-n5">
+                    <div class="row">
+                        <div class="col-sm-4 col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    {{$contenido->title}}
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-little"></h5>
+                                    <p class="card-text">{{$contenido->description}}</p>
+                                <a href="" class="btn btn-primary">go</a>
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>              --}}
 
-        <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="col mb-4" style="display: flex;
+                                            justify-content: center !important;">
 
-        <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe class="gallery_img" width="560" height="315" src="https://www.youtube.com/embed/rXiBaLHxHKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-     
+                    <div class="card border-dark text-bg-info" style="width: 15rem;">
+                        <div class="card-header">
+                            {{$contenido->title}}  
+                        </div>
+                        <div class="card-body ">
+                            <img class="card-img-top" src="{{ asset($contenido->url) }}" alt="">
+                            <p><strong>Autor: </strong> {{$contenido->autor}}</p>
+                            <p class="card-text">    
+                                {{$contenido->description}}
+                            </p>
+                            <a href="#" class="btn btn-primary">link</a>
+                        </div>
 
+                    </div>
+
+                </div>
+
+        @endforeach    
+    {{$contenidos->links()}}      
 </div>
-{{$contenidos->links()}}
+{{-- {{$contenidos->links()}} --}}
+ 
 
 @endsection
 

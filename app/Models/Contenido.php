@@ -15,6 +15,7 @@ class Contenido extends Model
     protected $fillable = [
         'title',
         'url',
+        'autor',
         'description',
     ];
 

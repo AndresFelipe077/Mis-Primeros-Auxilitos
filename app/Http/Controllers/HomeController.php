@@ -17,18 +17,25 @@ class HomeController extends Controller
     //Vista home de videos
     public function index()
     {
-        $contenidos = Contenido::orderBy('id','desc')->paginate(5);
+        $contenidos = Contenido::orderBy('id','desc')->paginate(8);
         return view('home.index', compact('contenidos'));
     }
 
     //Vista configuracion
     public function ajustes()
     {
+
+        if(Auth::check())
+        {
+            $contenidos = Contenido::orderBy('id','desc')->paginate(5);
+            return view('home.index', compact('contenidos'));
+        }
+
         return view('home.ajustes');
     }
 
     public function create()
-    {       
+    {   
         return view('home.create');
     }
 
@@ -38,14 +45,13 @@ class HomeController extends Controller
         $request->validate([
             'title'        => 'required|max:50',
             'file'         => 'required|image',
+            'autor'        => 'required|max:25',
             'description'  => 'required'
         ]);
 
         $nombre = Str::random(10) . $request->file('file')->getClientOriginalName();
 
         $ruta = storage_path() . '\app\public\images/' . $nombre;
-
-        
 
         Image::make($request->file('file'))
             ->resize(800, null, function($constraint){
@@ -56,6 +62,7 @@ class HomeController extends Controller
         Contenido::create([
             'title'       => $request->title,
             'url'         => '/storage/images/' . $nombre,
+            'autor'       => $request->autor,
             'description' => $request->description,
         ]);
 
@@ -73,6 +80,7 @@ class HomeController extends Controller
         $request -> validate([
             'title'        => 'required|max:50',
             'file'         => 'required|image',
+            'autor'        => 'required|max:25',
             'description'  => 'required'
         ]);
         
@@ -88,8 +96,9 @@ class HomeController extends Controller
             })
             ->save($ruta);
 
-        $contenido->title = $request->title;
-        $contenido->url = '/storage/images/' . $nombre;
+        $contenido->title       = $request->title;
+        $contenido->url         = '/storage/images/' . $nombre;
+        $contenido->autor       = $request->autor;
         $contenido->description = $request->description;
         
         $contenido->save();

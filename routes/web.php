@@ -28,17 +28,16 @@ Route::controller(HomeController::class)->group(function(){
 
     Route::get('home/create/contenido','create')->name('home.create');
 
-    Route::post('home/store/contenido', 'store')->name('store.contenido');
+    Route::post('home/store/contenido', 'store')->name('contenido.store');
 
-    Route::get('/home/{contenido}/edit','edit')->name('home.edit');
+    Route::get('/home/{contenido}/edit','edit')->name('contenido.edit');
 
-    Route::put('/home/{contenido}','update')->name('edit.contenido.update');
+    Route::put('/home/{contenido}','update')->name('contenido.update');
+
+    Route::delete('edit/{contenido}','destroy')->name('contenido.destroy');
 
     //Acceder a vista ajustes
     Route::get('home/ajustes/','ajustes')->name('home.ajustes');
-
-    Route::delete('edit/{contenido}','destroy')->name('registro.contenido.destroy');
-
 
 });
 
@@ -49,6 +48,8 @@ Route::controller(UserController::class)->group(function(){
     Route::get('/register', 'showRegister')->name('registro');
 
     Route::post('/register','register');
+
+    Route::get('/','show')->name('login');
     
     Route::get('/login', 'show')->name('login');
     
@@ -61,19 +62,18 @@ Route::controller(UserController::class)->group(function(){
 
     Route::get('logout/','logout')->name('logout');
 
-    Route::delete('edit/{registro}','destroy')->name('registro.destroy');
+    Route::delete('edit/{registro}/edit','destroy')->name('registro.destroy');
 
     //Registro exclusivo con google
-
-    Route::get('/login/google', 'redirectToGoogle')->name('login.google');
+    // Route::get('/login/google', 'redirectToGoogle')->name('login.google');
      
-    Route::get('/google/callback', 'handleGoogleCallback');
+    // Route::get('/google/callback', 'handleGoogleCallback');
 
-    //FACEBOOK
+    // //FACEBOOK
 
-    Route::get('/login/facebook', 'redirectToFacebook')->name('login.facebook');
+    // Route::get('/login/facebook', 'redirectToFacebook')->name('login.facebook');
 
-    Route::get('/facebook/callback', 'handleFacebookCallback');
+    // Route::get('/facebook/callback', 'handleFacebookCallback');
 
 });
 
