@@ -46,6 +46,7 @@
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none
+    background-image: url(asset('img/login/fondoimagen.png'));
     
 }
 #image-head{border-radius:"10px";}

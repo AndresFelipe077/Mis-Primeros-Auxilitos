@@ -24,13 +24,6 @@ class HomeController extends Controller
     //Vista configuracion
     public function ajustes()
     {
-
-        if(Auth::check())
-        {
-            $contenidos = Contenido::orderBy('id','desc')->paginate(5);
-            return view('home.index', compact('contenidos'));
-        }
-
         return view('home.ajustes');
     }
 
