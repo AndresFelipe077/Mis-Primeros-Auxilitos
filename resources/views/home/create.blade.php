@@ -1,15 +1,21 @@
 @extends('layouts.plantilla')
 
-@section('title','Create')
+@section('title','Crear contenido')
 
-
-@include('layouts.partials.header')
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 @section('content')
 
 <br><br><br><br><br><br>
 
 <a id="a-regresar-perfil" href="{{route('home.index')}}">regresar</a>
+
+{{-- <div class="alert alert-success d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+    <div>
+      An example success alert with an icon
+    </div>
+  </div> --}}
 
     <h1>Vista crear videos</h1>
     <form action="{{route('contenido.store')}}" method="POST" enctype="multipart/form-data">
@@ -64,5 +70,5 @@
     </form>
     
     
-@include('layouts.partials.footer')
+
 @endsection

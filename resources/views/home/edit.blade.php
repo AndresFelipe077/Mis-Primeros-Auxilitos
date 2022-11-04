@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 
 @section('title','Create')
-
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
 @section('content')
 
 <br><br><br><br><br><br>

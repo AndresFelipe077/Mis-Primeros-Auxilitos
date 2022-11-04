@@ -1,5 +1,8 @@
 {{-- footer --}}
     <!-- The navigation menu -->
+
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
     <div class="navbar1">
         <div class="hijos-navbar">
             <img src="img/menu/home.png" onclick="location.href='{{route('home.index')}}'">

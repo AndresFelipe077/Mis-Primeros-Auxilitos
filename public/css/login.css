@@ -28,25 +28,24 @@
 .body_Login{
 
     font-family:'DynaPuff', cursive;
-    background: #f12711;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0ebcf1, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0ebcf1, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 780px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-image:url("/img/login/background.png");
+    
 }
 
 .content_login{
+
     margin:0 auto;
     animation-name: mianimacion;
     animation-duration:2s;
     position:relative;
     user-select: none;
     -moz-user-select: none;
-    -webkit-user-select: none
-    background-image: url(asset('img/login/fondoimagen.png'));
+    -webkit-user-select: none   
     
 }
 #image-head{border-radius:"10px";}
@@ -108,9 +107,6 @@ form{
     padding:40px 0;
     box-shadow: 0 0 6px 0 #334d50;
     margin-top: 2em;
-    background: #40E0D0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius:10px;
     color: aliceblue;
 }
@@ -119,6 +115,7 @@ form{
 
     width: 100%;
     margin: auto;
+    
 
 }
 

@@ -29,10 +29,11 @@ class UserController extends Controller
     public function login(LoginRequest $request)
     {
         $credencials = $request->getCredentials();
-
+        
         if(!Auth::validate($credencials))
         {
-            return redirect()->to('/login')->withErrors('auth.failed');
+
+            return redirect()->to('/login')->withErrors('Correo y/o contraseña incorrectos');
         }
     
         $user = Auth::getProvider()->retrieveByCredentials($credencials);
