@@ -45,9 +45,9 @@ Route::controller(HomeController::class)->group(function(){
 
 Route::controller(UserController::class)->group(function(){
 
-    Route::get('/register', 'showRegister')->name('registro');
+    Route::get('/registro', 'showRegister')->name('registro');
 
-    Route::post('/register','register');
+    Route::post('/registro/user','register')->name('registro.user');
 
     Route::get('/','show')->name('login');
     
