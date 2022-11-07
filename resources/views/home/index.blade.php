@@ -9,8 +9,29 @@
 <body class="body-index">
 
     <div class="gallery">
+    {{-- Cuando se borra algun contenido --}}
+    @if(session('eliminar') == 'ok')
+        <script>
+            Swal.fire(
+                '¡Eliminado!',
+                'El contenido se elimino exitosamente.',
+                'success'
+            )
+        </script>
+    @endif
+    
+    @if(session('subir') == 'ok')
+        <script>
+            Swal.fire(
+                '¡Contenido subido!',
+                '¡El envio ha sido un exito!.',
+                'success'
+            )
+        </script>
+    @endif
         
-        @foreach($contenidos as $contenido)   
+        @foreach($contenidos as $contenido)
+             
 
                 <div class="col mb-4" style="display: flex;
                                             justify-content: center !important;">
@@ -38,7 +59,7 @@
     {{$contenidos->links()}}      
 </div>
 
- 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @endsection
 

@@ -59,7 +59,7 @@ class HomeController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('home.index');
+        return redirect()->route('home.index')->with('subir','ok');
     }
 
 
@@ -104,8 +104,8 @@ class HomeController extends Controller
     public function destroy(Contenido $contenido)
     {
         $contenido->delete();
-
-        return redirect()->route('home.index');
+                                                    // eliminar => variable, ok => mensaje
+        return redirect()->route('home.index')->with('eliminar','ok');
     }
             
 

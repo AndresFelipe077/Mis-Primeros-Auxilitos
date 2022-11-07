@@ -4,7 +4,7 @@
 
     <nav class="navbar navbar-default rounded bg-info w-100 p-3 fixed-top vh-md-100">
         <div class="container-fluid">
-          <a class="navbar-brand">MIS PRIMEROS AUXILITOS</a>
+          <a class="navbar-brand" href="{{route('home.index')}}">MIS PRIMEROS AUXILITOS</a>
           <form class="d-flex position-absolute" style="top:0;
           right:0;">
             {{-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> --}}
@@ -15,7 +15,7 @@
                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
                 </svg>
             </a>
-            <button class="btn success rounded-circle"><img src="img/profile/profile.png"></button>
+            <button class="btn success rounded-circle"><img src="{{asset('img/profile/profile.png')}}"></button>
           </form>
         </div>
     </nav>

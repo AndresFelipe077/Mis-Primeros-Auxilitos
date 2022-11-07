@@ -1,71 +1,74 @@
 @extends('layouts.plantilla')
 
-@section('title','Create')
-<link rel="stylesheet" href="{{asset('css/style.css')}}">
+@section('title','Editar contenido')
+<link rel="stylesheet" href="{{asset('css/create-content.css')}}">
 @section('content')
 
-<br><br><br><br><br><br>
-    <h1>Vista crear videos</h1>
-    <form action="{{route('contenido.update', $contenido)}}" method="POST" enctype="multipart/form-data">
+    <h1 id="title-h1" class="text-center">Vista crear videos</h1>
+    <a href="{{route('home.index')}}"><img src="{{ asset('/img/icons/regresar.png')}}"id="a-regresar-perfil"></a> 
 
-        @csrf
-
-        @method('put')
-
-        <div class="card">
-            
-            <div class="card-header">CREAR CONTENIDO</div>
-            <div class="card-body">
-                <a id="a-regresar-perfil" href="{{route('home.index')}}">regresar</a>
-                <div>
-                    <label for="">Titulo</label>
-                        <input type="text" name="title" value="{{old('title',$contenido->title)}}" required>
-                        @error('title')
-                            <br>
-                                <small>* {{$message}}</small>
-                            <br>
-                        @enderror
-                </div>
-                <div>
-                    <label for="">Video y/o imagen</label>
-                        <img src="{{ asset($contenido->url) }}" width="100px" height="100px">
-                            <input type="file" name="file" value="{{old('file',$contenido->url)}}" accept="image/*" required>
-                        @error('file')
-                            <br>
-                                <small>* {{$message}}</small>
-                            <br>
-                        @enderror
-                </div>
-                <div>
-                    <label for="">Autor</label>
-                        <input type="text" name="autor" value="{{old('autor',$contenido->autor)}}" required>                  
-                        @error('autor')
-                            <br>
-                                <small class="text-danger">{{$message}}</small>
-                            <br>
-                        @enderror  
-                </div>
-                <div>
-                    <label for="">Descripción</label>
-                        <input type="text" name="description" value="{{old('description',$contenido->description)}}" required>
-                        @error('description')
-                            <br>
-                                <small>* {{$message}}</small>
-                            <br>
-                        @enderror
-                </div>               
-                <button type="submit">Actualizar</button>
-            </div>
-        </div>
-    </form>
-
-
-    <form method="POST" action="{{route('contenido.destroy', $contenido)}}">
-        @csrf
-        @method('delete')
-        <button type="submit" id="a-borrar-cuenta" onclick="return confirm('¿Seguro que deseas eliminar el contenido?')">Borrar contenido</button>
-    </form>
     
+    <div class="container text-center w-50">
 
+          <form class="p-3 m-3" action="{{route('contenido.store')}}" method="POST" enctype="multipart/form-data">
+            
+            @csrf
+            <div class="card" >
+                <div class="card-title m-1">
+                    <div class="form-group">
+                        <label for="">Titulo de la imagen</label>
+                        <input type="text" name="title" class="form-control" id="" aria-describedby="" value="{{old('title',$contenido->title)}}">
+                          @error('title')
+                                  <br>
+                                      <small class="text-danger">{{$message}}</small>
+                                  <br>
+                          @enderror
+                      </div>
+                </div>
+            <div class="form-group m-1">
+                <label for="exampleFormControlFile1" id="src-file">Escoge una imagen</label><br>
+                <img src="{{ asset($contenido->url) }}" width="100px" height="100px"><br>
+                    <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*" value="{{old('file',$contenido->url)}}">
+                @error('file')
+                        <br>
+                            <small class="text-danger">{{$message}}</small>
+                        <br>
+                @enderror
+            </div>
+              <div class="form-group m-1">
+                <label for="">Autor</label>
+                    <input type="text" name="autor" class="form-control" id="" aria-describedby="" value="{{old('autor',$contenido->autor)}}">
+                @error('autor')
+                        <br>
+                            <small class="text-danger">{{$message}}</small>
+                        <br>
+                @enderror
+              </div>
+              <div class="form-group m-1">
+                <label for="">Descripción</label>
+                    <input type="text" name="description" class="form-control" id="" aria-describedby="" value="{{old('description',$contenido->description)}}">
+                @error('description')
+                        <br>
+                            <small class="text-danger">{{$message}}</small>
+                        <br>
+                @enderror
+              </div>
+            <button type="submit" class="btn btn-primary mt-2 m-3">Subir</button>
+            </div>
+          </form>
+
+        <div>
+
+            <form method="POST" class="formulario-eliminar-contenido" action="{{route('contenido.destroy', $contenido)}}">
+                @csrf
+                @method('delete')
+                <button class="btn btn-danger rounded mb-5">Borrar contenido</button>
+            </form>
+        </div>
+        
+
+    </div>
+
+<script src="{{asset('js/toast-delete.js')}}"></script>
 
 @endsection
