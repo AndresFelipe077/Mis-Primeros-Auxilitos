@@ -7,6 +7,9 @@
     <title>PERFIL</title>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+
 </head>
 <body class="body-perfil">
 
@@ -72,7 +75,7 @@
             <form method="POST" action="{{route('registro.destroy', $registro)}}">
                 @csrf
                 @method('delete')
-                <button type="submit" id="a-borrar-cuenta" onclick="return confirm('¿Seguro que deseas eliminar tu cuenta?')">Borrar cuenta</button>
+                <button class="btn btn-danger" type="submit" id="a-borrar-cuenta" onclick="return confirm('¿Seguro que deseas eliminar tu cuenta?')">Borrar cuenta</button>
             </form>
     
         </div>
@@ -89,49 +92,71 @@
 
         <div class="container-perfil-datos-padre2">
             <div class="form">
-                <h1 id="tituloAuxilitos">MIS PRIMEROS AUXILITOS</h1>
-                <h1 id="tituloRegistro">Registro</h1>
+                <h3 id="tituloAuxilitos">MIS PRIMEROS AUXILITOS</h3>
+                <h4 id="tituloRegistro">Registro</h4>
 
-                <div class="grupo">
-                    <input type="file" name="file" value="{{old('avatar',$registro->url)}}" accept="image/*" required>
-                    <label class="label" for="">Cambiar imagen</label>
-                </div>
 
-                <div class="grupo">
-                    <input class="input" type="text" name="name" id="name" required value="{{$registro->name}}"><span class="barra"></span>
-                    <label  class="label" for="">Nombre</label>
-                </div>
-    
-                <div class="grupo">
-                    <div>
-                     <span class="label-genero-edit">Genero</span>   
+                <div class="card" >
+                    <div class="card-title m-1">
+                        <div class="form-group m-1">
+                            <label for="exampleFormControlFile1" id="src-file">Escoge una imagen</label><br>
+                            <input type="file" name="file" value="{{old('avatar',$registro->url)}}" accept="image/*">
+                            {{-- @error('file')
+                                    <br>
+                                        <small class="text-danger">{{$message}}</small>
+                                    <br>
+                            @enderror --}}
+                        </div>
+                        
                     </div>
-                    
-                    <label>
-                        <input name="genero" class="custom-checkbox" value="Masculino" type="checkbox">
-                        <span><label class="label1" for="">Masculino</label></span>
-                    </label>
-                    <label>
-                        <input name="genero" class="custom-checkbox" value="Femenino" type="checkbox" >
-                        <span><label class="label1" for="">Femenino</label></span>
-                    </label>
-                    <label>
-                        <input name="genero" class="custom-checkbox" value="Otro" type="checkbox">
-                        <span><label class="label1" for="">Otro</label></span>
-                    </label>
-                </div>
-    
+                    <div class="form-group">
+                        <label for="">Nombre</label>
+                        <input class="form-control" type="text" name="name" id="name" required value="{{$registro->name}}"><span class="barra"></span>
+                          @error('name')
+                                  <br>
+                                      <small class="text-danger">{{$message}}</small>
+                                  <br>
+                          @enderror
+                      </div>
                 
-                <div class="grupo">
-                    <input class="input" type="date" name="fechaNacimiento" id="name" required value="{{$registro->fechaNacimiento}}"><span class="barra"></span>
-                    <label class="label" for="">Fecha de nacimiento</label>
+                  <div class="form-group m-1">
+                    <label for="">Genero</label>
+                    <div>
+                       </div>
+                       <label>
+                           <input name="genero" class="custom-checkbox" value="Masculino" type="checkbox">
+                           <span><label class="label1" for="">Masculino</label></span>
+                       </label>
+                       <label>
+                           <input name="genero" class="custom-checkbox" value="Femenino" type="checkbox" >
+                           <span><label class="label1" for="">Femenino</label></span>
+                       </label>
+                       <label>
+                           <input name="genero" class="custom-checkbox" value="Otro" type="checkbox">
+                           <span><label class="label1" for="">Otro</label></span>
+                       </label>
+                    {{-- @error('genero')
+                            <br>
+                                <small class="text-danger">{{$message}}</small>
+                            <br>
+                    @enderror --}}
+                  </div>
+                  <div class="form-group m-1">
+                    <label for="">Fecha de nacimiento</label>
+                    <input class="form-control" type="date" name="fechaNacimiento" id="name" required value="{{$registro->fechaNacimiento}}">
+                    @error('fechaNacimiento')
+                            <br>
+                                <small class="text-danger">{{$message}}</small>
+                            <br>
+                    @enderror
+                  </div>
+                  <div>
+                    <button class="btn btn-primary" type="submit">Actualizar información</button>
                 </div>
-
+                </div>
     
 
-            <div>
-                <button id="btn-actualizar-info-perfil" type="submit">Actualizar información</button>
-            </div>
+            
     
         </div>
 
@@ -141,6 +166,7 @@
 
     <footer class="footer-perfil-perfil">MIS PRIMEROS AUXILITOS</footer>
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{asset('js/checkCheckBox.js')}}"></script>
 
 </body>

@@ -6,80 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link id="image-head" rel="shortcut icon" href="{{asset('img/botiquin.png')}}" type="image/x-icon">
-    {{-- <link rel="stylesheet" href="{{ asset('css/login.css') }}" /> --}}
-    <script type="text/javascript" src="javaScript.js"></script>
-
+    
+    <script src="{{asset('js/carousel.js')}}"></script>
+    
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    
+
+    {{-- Estilos --}}
+    <link rel="stylesheet" href="{{asset('css/styleLogin.css')}}">
+
     {{-- animations css --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> 
     
-    <link rel="stylesheet" href="{{asset('css/styleLogin.css')}}">
+    
+    
 
 </head>
-<body {{--class="body_Login"--}}> 
-
-    {{-- <content class="content_login">
-        <h1 class="animate__animated animate__bounce" id="titulo-Auxilitos"><img id="image_Title" src="{{ asset('img/botiquin.png') }}" height="50px" width="50px"> MIS PRIMEROS AUXILITOS <img id="image_Title" src="{{ asset('img/botiquin.png') }}" height="50px" width="50px"></h1>
-         <h1 ><img id="image_Title" src="{{ asset('img/botiquin.png') }}" height="50px" width="50px"> MIS PRIMEROS AUXILITOS <img id="image_Title" src="{{ asset('img/botiquin.png') }}" height="50px" width="50px"></h1> 
-
-            <form action="{{route('login.post')}}" method="POST" class="form">
-                
-                @csrf
-
-                <h1 id="titulo" class="animate__animated animate__swing" >Login</h1>
-
-                @if($errors->any())
-                <div class="alert alert-danger animate__animated animate__swing" role="alert">                 
-                        @foreach($errors->all() as $error)
-                            <strong>* {{$error}}</strong>
-                        @endforeach 
-                </div>                          
-                @endif
-
-                <div class="grupo">
-                    <input type="email" id="correo" name="email" placeholder="Correo" required>
-                </div>
-                
-                <div class="grupo">
-                    <input type="password" id="contrasena" name="password" placeholder="Contraseña" required>
-                </div>                             
-
-                <div class="grupo">
-                    <button id="btn_loguearse" class="submit">ACEPTAR</button>
-                </div>
-
-                <div class="content_password_Olvida">
-                    <a id="text_password" href=""> ¿Has olvidado tu contraseña?</a>
-                    
-                </div>
-
-                <div class="grupo">
-                    <text>¿No tienes cuenta?</text>
-                  <button id="btn_registrarse" onclick="location.href='{{route('registro')}}'">registrarse</button>  
-
-                </div>
-
-                <div class="grupo">
-                    <img class="img-btn-Facebook" src="{{ asset('img/Facebook.svg') }}" onclick="location.href='https://www.facebook.com/'">
-                    <img class="img-btn-Google" src="{{ asset('img/Google.svg') }}" onclick="location.href='https://accounts.google.com/v3/signin/identifier?dsh=S1426936774%3A1667332891017678&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession'">
-                </div>
-
-                
-
-                <footer class="footer">
-
-                    copyright &copy Mis Primeros Auxilitos
-            
-                </footer>
-
-            </form>
-
-        
-            
-
-    </content> --}}
+<body class="body_Login"> 
 
 
     <div class="container mt-5 animate__animated animate__swing rounded">
@@ -100,7 +44,7 @@
                         </div>
                       </div>
                       <div class="carousel-item">
-                        <img src="{{asset('img/imgs/halo2.jpg')}}" class="d-block d-flex align-items-center animate__animated animate__heartBeat rounded" alt="..." width="100%" height="100%"> 
+                        <img src="{{asset('img/imgs/bomberito-auxilitos.png')}}" class="d-block d-flex align-items-center animate__animated animate__heartBeat rounded" alt="..." width="100%" height="100%"> 
                         <div class="carousel-caption d-none d-md-block">
                           <h5 class="bg-secondary rounded">Es muy importante aprender de primeros auxilios</h5>
                         </div>
@@ -121,6 +65,7 @@
                       <span class="visually-hidden">Next</span>
                     </button>
                   </div>
+                  
             </div> 
             </div>
             
@@ -128,7 +73,7 @@
                 <div class="text-end">
                     <img class="animate__animated animate__heartBeat" src="images/fotos/logo.png" width="48" alt="">
                 </div>
-                <h2 id="container-login" class="fw-bold text-center py-5" id="text-letras">Bienvenido</h2>
+                <h2 id="container-login" class="fw-bold text-center py-5 text-primary rounded">Bienvenido</h2>
 
                 <!-- Login -->
                 @if($errors->any())
@@ -153,15 +98,15 @@
                        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
                    </div>
                    <div class="text-center my-3">
-                       <span>¿No tienes cuenta? <a href="{{route('registro')}}">Registrate</a></span><br>
-                       <span><a href="#">He olvidado mi contraseña</a></span>
+                       <span>¿No tienes cuenta? <a class="text-primary h5" href="{{route('registro')}}">Registrate</a></span><br>
+                       <span><a class="text-primary h5" href="#">He olvidado mi contraseña</a></span>
                    </div>
                 </form>
 
                 <!-- Login con redes sociales -->
-                <div class="container w-100 my-5">
+                <div class="container w-100 my-3">
                     <div class="row text-center">
-                        <div class="col-12">Iniciar sesion</div>
+                        <div class="col-12 h5">Iniciar sesion</div>
                     </div>
                     <div class="row text-center">
                         <div class="col">
@@ -183,6 +128,9 @@
                              </button>
                         </div>
                     </div>
+                    <div class="row text-center bg-dark text-light rounded ">
+                        <div class="col-12">Copyright &copy; 2022</div>
+                    </div>
                 </div>
 
             </div>
@@ -190,16 +138,9 @@
     </div>
 
 
-
-
-
-
-
-
-
 <!--Script-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset('js/carousel.js')}}"></script>
+
 
 
 </body>

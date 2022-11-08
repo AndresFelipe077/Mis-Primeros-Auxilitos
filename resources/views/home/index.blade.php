@@ -33,7 +33,7 @@
         @foreach($contenidos as $contenido)
              
 
-                <div class="col mb-4" style="display: flex;
+                <div class="col mb-4 animate__animated animate__wobble" style="display: flex;
                                             justify-content: center !important;">
 
                     <div class="card shadow border-dark text-bg-info" style="width: 15rem;">
@@ -59,7 +59,7 @@
     {{$contenidos->links()}}      
 </div>
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 @endsection
 

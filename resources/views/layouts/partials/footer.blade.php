@@ -2,8 +2,9 @@
     <!-- The navigation menu -->
 
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-    <div class="navbar1">
+    <div class="navbar1  animate__animated animate__backInUp">
         <div class="hijos-navbar">
             <img src="{{asset('img/menu/home.png')}}" onclick="location.href='{{route('home.index')}}'">
         </div>

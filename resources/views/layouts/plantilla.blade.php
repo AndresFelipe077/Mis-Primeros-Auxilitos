@@ -8,7 +8,7 @@
     <!--favicon-->
     <link rel="shortcut icon" href="{{asset('img/botiquin.png')}}" type="image/x-icon">
     {{-- Estilos de jquery --}}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <!--estilos-->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -17,28 +17,25 @@
     {{-- Fuente --}}
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
 
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     
     <!-- cdn icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
+    {{-- animations css --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> 
+
+
 </head>
 <body>
     @auth
+
     <!--header-->
     @include('layouts.partials.header')
     
 
     <!--nav-->
-
-    
-
-    
-
-
-
     
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Jquery -->
@@ -68,11 +65,31 @@
 
     @endauth
 
+    {{-- Excepcion cuando el usuario quiere entrar sin loguearse --}}
+    
     @guest
-
-    <a href="{{route('login')}}"><strong>Inicia sesion</strong></a>
-
+     <div class="py-5 animate__animated animate__rubberBand" style="
+                                                                    background-image:url('/img/imgs/a.jpg');
+                                                                    height:100vh;
+                                                                    background-size: cover;
+                                                                    background-position: center;
+                                                                    margin:0;
+                                                                    padding:0; ">
+     
+       <div class="text-center">
+            <img class="rounded" src="{{asset('img/imgs/logo.png')}}" alt="">
+       </div>
+        <div class="text-center">
+            <h4 class="animate__animated animate__tada" style="font-family: 'DynaPuff', cursive; color:blue;">¡Es muy importante cuidarse!</h4>
+        </div>
+       <div class="text-center animate__animated animate__backInDown">
+        <a class="h2 text-danger rounded" href="{{route('login')}}" style="text-decoration: none; border-color: solid blue;"><strong style="font-family: 'DynaPuff', cursive; ">Iniciar sesion</strong></a>
+       </div>
+    
+    </div>
     @endguest
+
+    
 
 </body>
 </html>
