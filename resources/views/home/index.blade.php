@@ -4,9 +4,9 @@
 
 
 <!--estilos-->
-<link rel="stylesheet" href="{{asset('css/style.css')}}">
+<link rel="stylesheet" href="{{asset('css/index-home.css')}}">
 @section('content')
-<body class="body-index">
+<body>
 
     <div class="gallery">
     {{-- Cuando se borra algun contenido --}}
@@ -32,11 +32,9 @@
         
         @foreach($contenidos as $contenido)
              
+                <div class="col mb-4 animate__animated animate__wobble">
 
-                <div class="col mb-4 animate__animated animate__wobble" style="display: flex;
-                                            justify-content: center !important;">
-
-                    <div class="card shadow border-dark text-bg-info" style="width: 15rem;">
+                    <div class="card shadow border-dark text-bg-info">
                         <div class="card-header">
                             {{$contenido->title}}  
                         </div>

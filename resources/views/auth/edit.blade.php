@@ -126,6 +126,11 @@
                        <label>
                            <input name="genero" class="custom-checkbox" value="Masculino" type="checkbox">
                            <span><label class="label1" for="">Masculino</label></span>
+                           {{-- @if(Thisform.Check3.Value=1)
+                                
+                                Thisform.Check3.ForeColor="(0,0,128)"
+                           
+                           @endif --}}
                        </label>
                        <label>
                            <input name="genero" class="custom-checkbox" value="Femenino" type="checkbox" >

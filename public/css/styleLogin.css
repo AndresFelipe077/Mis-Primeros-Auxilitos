@@ -29,6 +29,7 @@
 }
 
 body{
+    
     font-family: 'DynaPuff', cursive;
     background-image:url("/img/imgs/a.jpg");
     height:100vh;
@@ -36,7 +37,6 @@ body{
     background-position: center;
       
 }
-
 
 .corousel-inner img{
     width:100%;
