@@ -2,7 +2,7 @@
 
 @section('title','Home')
 
-
+{{-- http://mis-primeros-auxilitos.com --}}
 <!--estilos-->
 <link rel="stylesheet" href="{{asset('css/index-home.css')}}">
 @section('content')
@@ -53,9 +53,19 @@
 
                 </div>
 
-        @endforeach    
-    {{$contenidos->links()}}      
+        @endforeach
+        
+        
 </div>
+
+<div class="">
+    <ul class="pagination pagination-lg">
+        <li class="page-item active mb-5" aria-current="page">
+        <span class="page-link bg-light h4">{{$contenidos->links()}}</span>
+        </li>   
+    </ul>
+</div>
+
 
 
 
