@@ -29,9 +29,8 @@
             )
         </script>
     @endif
-        
+    
         @foreach($contenidos as $contenido)
-             
                 <div class="col mb-4 animate__animated animate__wobble">
 
                     <div class="card shadow border-dark text-bg-info">

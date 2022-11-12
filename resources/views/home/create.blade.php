@@ -6,11 +6,11 @@
 
 @section('content')
 
-    <h1 id="title-h1" class="text-center">Vista crear videos</h1>
-    <a href="{{route('home.index')}}"><img src="{{ asset('/img/icons/regresar.png')}}"></a> 
+    <h1 id="title-h1" class="text-center animate__animated animate__jackInTheBox">Crear contenido</h1>
+    <a href="{{route('home.index')}}" class="animate__animated animate__jackInTheBox"><img src="{{ asset('/img/icons/regresar.png')}}"></a> 
 
     
-    <div class="container text-center w-50">
+    <div class="container text-center w-50 animate__animated animate__jackInTheBox">
 
         {{-- Otro crear contenido --}}
 

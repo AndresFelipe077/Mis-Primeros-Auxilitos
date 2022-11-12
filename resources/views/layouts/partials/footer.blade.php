@@ -15,10 +15,11 @@
             <div class="col">
                 <img src="{{asset('img/menu/microphone2.png')}}" onclick="location.href=''">
             </div>
-        
+            
             <div class="col">
                 <img src="{{asset('img/menu/settings2.png')}}" onclick="location.href='{{route('home.ajustes')}}'">
             </div>
+            
         
         </div>
     </nav>
