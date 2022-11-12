@@ -398,15 +398,35 @@ class == .
 
 /*INICIO AJUSTES*/
 
+
+.perfil{
+position: relative;
+
+right: 480px;
+top: 260px;
+
+
+}
+
+
+.img1{
+position: relative;
+top: -500px;
+right: 200px;
+
+}
+.img2{
+    position: relative;
+    top: -500px;
+    left: 500px;
+    
+    }
 .body-ajustes{
     font-family: 'DynaPuff', cursive;
-    background: #F7971E;  /* fallback for old browsers */
-    background: #11998e;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    margin: 0 auto;
+    margin: 0 ;
     padding: 0;
-    display: flex;
+    background-color: #77e814;
+    position: relative;
     justify-content:center;
     align-items: center;
     text-align: center;
@@ -427,29 +447,60 @@ class == .
 
 #enlace{
 
+
+    position: relative;
+
+    top: -1110px;
     font-size:2em;
     text-decoration: none;
     border-radius:10px;
     cursor: pointer;
     border:black;
     color: #3a01f6;
-    background:linear-gradient(to right, #bdf71e, #26ff00, #bdf71e);
-    
+
     
 
 }
 
-#enlace-btn{
-    font-size:2em;
-    font-family:'DynaPuff', cursive;
-    border-radius:10px;
-    background-color: rgb(216, 203, 28);
-    color: aliceblue;
-    cursor: pointer;
-    color: #3a01f6;
-    background:linear-gradient(to right, #bdf71e, #26ff00, #bdf71e);
-    
+.version{
+    position: absolute;
+    top: 650px;
+    left: 1035px;
 
+
+}
+.sesion{
+
+position: absolute;
+top: 610px;
+left: 990px;
+
+
+}
+.ayuda{
+
+position: relative;
+
+left: 850px;
+
+
+}
+.desactivar{
+
+position: relative;
+top: -1071px;
+left: 120px;
+
+
+}
+
+#enlace-btn{
+    position: relative;
+    top: -11500;
+
+    color: #3a01f6;
+    font-size:2em;
+  
 }
 
 #version-app
