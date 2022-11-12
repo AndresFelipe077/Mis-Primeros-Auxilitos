@@ -398,7 +398,185 @@ class == .
 
 /*INICIO AJUSTES*/
 
+<<<<<<< HEAD
 .perfil{
+=======
+
+.perfil{
+position: relative;
+
+right: 480px;
+top: 260px;
+
+
+}
+
+
+.img1{
+position: relative;
+top: -500px;
+right: 200px;
+
+}
+.img2{
+    position: relative;
+    top: -500px;
+    left: 500px;
+    
+    }
+.body-ajustes{
+    font-family: 'DynaPuff', cursive;
+    margin: 0 ;
+    padding: 0;
+    background-color: #77e814;
+    position: relative;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.container-perfil-padre
+{
+    
+    padding:100px;
+
+}
+
+.container-perfil-hijo
+{
+    margin:3em;
+}
+
+#enlace{
+
+
+    position: relative;
+
+    top: -1110px;
+    font-size:2em;
+    text-decoration: none;
+    border-radius:10px;
+    cursor: pointer;
+    border:black;
+    color: #3a01f6;
+
+    
+
+}
+
+.version{
+    position: absolute;
+    top: 650px;
+    left: 1035px;
+
+
+}
+.sesion{
+
+position: absolute;
+top: 610px;
+left: 990px;
+
+
+}
+.ayuda{
+
+position: relative;
+
+left: 850px;
+
+
+}
+.desactivar{
+
+position: relative;
+top: -1071px;
+left: 120px;
+
+
+}
+
+#enlace-btn{
+    position: relative;
+    top: -11500;
+
+    color: #3a01f6;
+    font-size:2em;
+  
+}
+
+#version-app
+{
+    color: #3a01f6;
+    font-size: 1.1em;
+}
+
+#enlace:hover{
+    box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
+    outline-color: rgba(49, 138, 172, 0);
+    outline-offset: 80px;
+    text-shadow: 1px 1px 6px #fff; 
+}
+
+#enlace-btn:hover{
+    box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
+    outline-color: rgba(49, 138, 172, 0);
+    outline-offset: 80px;
+    text-shadow: 1px 1px 6px #fff; 
+}
+
+/*FIN AJUSTES*/
+
+/*INICIO PERFIL*/
+
+.body-perfil{
+   
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'DynaPuff', cursive;
+    background-image:url("/img/imgs/a.jpg");
+    height:100vh;
+    background-size: cover;
+    background-position: center;
+    margin-left: 3em;
+    margin-right: 3em;
+
+
+}
+
+#a-regresar-perfil
+{
+    font-size:1.5em;
+    font-family:'DynaPuff', cursive;
+    border-radius:10px;
+    background-color: rgb(216, 203, 28);
+    color: aliceblue;
+    cursor: pointer;
+    color: #3a01f6;
+    background:linear-gradient(to right, #bdf71e, #26ff00, #bdf71e);
+    
+}
+
+.form1{
+
+    background:white;
+    padding: 40px 0;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    border-radius:10px;
+    width:100%;
+    margin:auto;
+    position:relative;
+    animation-name:mianimacion;
+    animation-duration:3s;
+    
+
+}
+
+.container-padre1{
+    margin-top: -3em;
+    margin: 0 auto;
+>>>>>>> d619a4c9b2036c8a4ce25612ac9b850191d22ac9
     position: relative;
     
     right: 480px;
