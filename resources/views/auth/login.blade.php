@@ -23,7 +23,7 @@
     
 
 </head>
-<body class="body_Login"> 
+<body> 
 
 
     <div class="container mt-5 animate__animated animate__swing rounded">

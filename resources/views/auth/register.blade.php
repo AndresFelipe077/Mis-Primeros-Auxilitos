@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    {{-- <link rel="stylesheet" href="{{ asset('css/register.css') }}" /> --}}
     <link rel="stylesheet" href="{{ asset('css/registro.css') }}" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -84,8 +83,7 @@
                                     @foreach($errors->all() as $error)
                                     <ul>
                                         <strong>* {{$error}}</strong>
-                                    </ul>
-                                        
+                                    </ul>    
                                     @endforeach              
                             </div>                          
                         @endif
@@ -101,16 +99,16 @@
                         <div class="grupo">
                             <h4 class="text-primary">Escoge tu genero </h4>
                             <label>
-                                <input name="genero" class="text-primary" value="Masculino" type="checkbox">
-                                <span><label class="label1" for="">Masculino</label></span>
+                                <input name="genero" class="custom-checkbox" value="Masculino" type="checkbox">
+                                <span><label class="text-primary" for="">Masculino</label></span>
                             </label>
                             <label>
                                 <input name="genero" class="custom-checkbox" value="Femenino" type="checkbox">
-                                <span>Femenino</span>
+                                <span><label class="text-primary" for="">Femenino</label></span>
                             </label>
                             <label>
                                 <input name="genero" class="custom-checkbox" value="Otro" type="checkbox">
-                                <span>Otro</span>
+                                <span><label class="text-primary" for="">Otro</label></span>
                             </label>
                         </div>
                         <div class="grupo">
@@ -162,10 +160,10 @@
         </div>
     </div>
 
+    <script src="{{asset('js/checkCheckBox.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{asset('js/carousel.js')}}"></script>
-    <script src="{{asset('js/checkCheckBox.js')}}"></script>
     
     
 </body>

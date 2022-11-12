@@ -7,6 +7,10 @@
     <title>@yield('title')</title>
     <!--favicon-->
     <link rel="shortcut icon" href="{{asset('img/botiquin.png')}}" type="image/x-icon">
+    
+    {{-- link de guest --}}
+    <link rel="stylesheet" href="{{asset('css/plantilla.css')}}">
+
     {{-- Estilos de jquery --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
@@ -68,22 +72,16 @@
     {{-- Excepcion cuando el usuario quiere entrar sin loguearse --}}
     
     @guest
-     <div class="py-5 animate__animated animate__rubberBand" style="
-                                                                    background-image:url('/img/imgs/a.jpg');
-                                                                    height:100vh;
-                                                                    background-size: cover;
-                                                                    background-position: center;
-                                                                    margin:0;
-                                                                    padding:0; ">
+     <div class="py-5 animate__animated animate__rubberBand">
      
        <div class="text-center">
             <img class="rounded" src="{{asset('img/imgs/logo.png')}}" alt="">
        </div>
         <div class="text-center">
-            <h4 class="animate__animated animate__tada" style="font-family: 'DynaPuff', cursive; color:blue;">¡Es muy importante cuidarse!</h4>
+            <h4 id="h4-text" class="animate__animated animate__tada">¡Es muy importante cuidarse!</h4>
         </div>
        <div class="text-center animate__animated animate__backInDown">
-        <a class="h2 text-danger rounded" href="{{route('login')}}" style="text-decoration: none; border-color: solid blue;"><strong style="font-family: 'DynaPuff', cursive; ">Iniciar sesion</strong></a>
+        <a id="href-iniciarSesion" class="h2 text-danger rounded" href="{{route('login')}}"><strong id="text-IniciarSesion">Iniciar sesion</strong></a>
        </div>
     
     </div>
