@@ -17,8 +17,10 @@ class HomeController extends Controller
     //Vista home de videos
     public function index()
     {
+        $registro = new User();
         $contenidos = Contenido::orderBy('id','desc')->paginate(8);
         return view('home.index', compact('contenidos'));
+
     }
 
     //Vista configuracion

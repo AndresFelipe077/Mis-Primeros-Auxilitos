@@ -22,8 +22,7 @@ class UserController extends Controller
         {
             $contenidos = Contenido::orderBy('id','desc')->paginate(5);
             return view('home.index', compact('contenidos'));
-        }
-       
+        } 
         return view('auth.login');
     }
 
@@ -87,6 +86,8 @@ class UserController extends Controller
             })
             ->save($ruta);
         
+        
+
         $registro->name            = $request->name;
         $registro->avatar          = '/storage/images/' . $nombre;
         $registro->genero          = $request->genero;
@@ -95,7 +96,7 @@ class UserController extends Controller
         $registro->save();
         
 
-        return redirect()->route('auth.edit', compact('registro'));
+        return redirect()->route('home.index', compact('registro'));
     }
 
     //Logout

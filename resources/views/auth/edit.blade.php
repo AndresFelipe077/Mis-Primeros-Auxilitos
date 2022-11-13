@@ -25,18 +25,13 @@
         </div>
 
         <div class="container-hijo-1">
-            <img type="file" name="file" class="imagen-perfil-perfil" src="{{asset($registro->avatar)}}" width="250px" height="250px" accept="image/*">
+            <img type="file" name="file" class="imagen-perfil-perfil" src="{{asset($registro->avatar)}}" width="200px" height="200px" accept="image/*">
         </div>
 
         <div class="container-hijo1">
             <label for="" id="label-name">{{$registro->name}}</label>
         </div>
 
-        {{-- <div class="container-hijo-1">
-
-            <input type="file" id="btn-cambiar-imagen-perfil" name="avatar" value="" accept="image/*" required>
-                     
-        </div> --}}
         
     </div>
 
