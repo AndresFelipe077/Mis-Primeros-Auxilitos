@@ -49,7 +49,7 @@ class HomeController extends Controller
         $ruta = storage_path() . '\app\public\images/' . $nombre;
 
         Image::make($request->file('file'))
-            ->resize(800, null, function($constraint){
+            ->resize(700, null, function($constraint){
                 $constraint->aspectRatio();
             })
             ->save($ruta);
@@ -86,7 +86,7 @@ class HomeController extends Controller
         
 
         Image::make($request->file('file'))
-            ->resize(800, null, function($constraint){
+            ->resize(700, null, function($constraint){
                 $constraint->aspectRatio();
             })
             ->save($ruta);
@@ -98,8 +98,7 @@ class HomeController extends Controller
         
         $contenido->save();
 
-
-        return redirect()->route('home.index');
+        return redirect()->route('home.index', compact('contenido'));
     }
 
 

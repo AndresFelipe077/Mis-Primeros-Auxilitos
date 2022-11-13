@@ -10,9 +10,11 @@
     
     <div class="container text-center w-50">
 
-          <form class="p-3 m-3" action="{{route('contenido.store')}}" method="POST" enctype="multipart/form-data">
+          <form class="p-3 m-3" action="{{route('contenido.update',  $contenido)}}" method="POST" enctype="multipart/form-data">
             
             @csrf
+            @method('put')
+
             <div class="card" >
                 <div class="card-title m-1">
                     <div class="form-group">
