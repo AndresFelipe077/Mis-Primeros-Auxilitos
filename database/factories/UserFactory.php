@@ -20,6 +20,7 @@ class UserFactory extends Factory
         
         return [
             'name'              => fake()-> name(),
+            'avatar'            => $this -> faker ->text('50'),
             'email'             => fake()-> unique()->safeEmail(),
             'genero'            => $this -> faker -> randomElement(['Masculino','Femenino','Otro']),
             'fechaNacimiento'   => $this -> faker -> randomElement(['2003/12/13','2002/12/16','2005/08/13','2022/02/14']),

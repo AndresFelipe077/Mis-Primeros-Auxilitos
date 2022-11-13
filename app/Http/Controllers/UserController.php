@@ -9,8 +9,8 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Session;
 use App\Models\Contenido;
-
-use App\Models\SocialProfile;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
 
@@ -23,6 +23,7 @@ class UserController extends Controller
             $contenidos = Contenido::orderBy('id','desc')->paginate(5);
             return view('home.index', compact('contenidos'));
         }
+       
         return view('auth.login');
     }
 
@@ -69,30 +70,28 @@ class UserController extends Controller
     //Editar
     public function edit(User $registro)
     {
-
-        /*$registro = User::find($registro);*/
         
         return view('auth.edit', compact('registro'));
         
     }
 
     public function update(Request $request, User $registro)
-    {
+    {      
+        $nombre = Str::random(10) . $request->file('file')->getClientOriginalName();
 
-        if(Auth::check())
-        {
-            $contenidos = Contenido::orderBy('id','desc')->paginate(5);
-            return view('home.index', compact('contenidos'));
-        }
+        $ruta = storage_path() . '\app\public\images/' . $nombre;
 
-        $registro->fill($request->all());
+        Image::make($request->file('file'))
+            ->resize(800, null, function($constraint){
+                $constraint->aspectRatio();
+            })
+            ->save($ruta);
         
-        /*
         $registro->name            = $request->name;
+        $registro->avatar          = '/storage/images/' . $nombre;
         $registro->genero          = $request->genero;
         $registro->fechaNacimiento = $request->fechaNacimiento;
-        */
-        
+
         $registro->save();
         
 

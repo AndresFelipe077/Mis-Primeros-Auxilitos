@@ -25,18 +25,18 @@
         </div>
 
         <div class="container-hijo-1">
-            <img type="file" class="imagen-perfil-perfil" src="{{asset($registro->avatar)}}" width="250px" height="250px">
+            <img type="file" name="file" class="imagen-perfil-perfil" src="{{asset($registro->avatar)}}" width="250px" height="250px" accept="image/*">
         </div>
 
         <div class="container-hijo1">
             <label for="" id="label-name">{{$registro->name}}</label>
         </div>
 
-        <div class="container-hijo-1">
+        {{-- <div class="container-hijo-1">
 
             <input type="file" id="btn-cambiar-imagen-perfil" name="avatar" value="" accept="image/*" required>
                      
-        </div>
+        </div> --}}
         
     </div>
 
@@ -85,7 +85,7 @@
         
     <!--Fin-->
 
-    <form class="form1" action="{{route('edit.update', $registro)}}" method="POST">
+    <form class="form1" action="{{route('edit.update', $registro)}}" method="POST" enctype="multipart/form-data">
 
         @csrf
 
@@ -101,7 +101,7 @@
                     <div class="card-title m-1">
                         <div class="form-group m-1">
                             <label for="exampleFormControlFile1" id="src-file">Escoge una imagen</label><br>
-                            <input type="file" name="file" value="{{old('avatar',$registro->url)}}" accept="image/*">
+                            <input type="file" name="file" value="{{old('avatar',$registro->avatar)}}" accept="image/*">
                             {{-- @error('file')
                                     <br>
                                         <small class="text-danger">{{$message}}</small>
