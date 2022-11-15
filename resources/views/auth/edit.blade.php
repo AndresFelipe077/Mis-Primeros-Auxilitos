@@ -7,11 +7,6 @@
     <title>PERFIL</title>
     <link rel="stylesheet" href="{{asset('css/perfil.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    
-    <!-- cdn icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-
     
 </head>
 <body class="body-perfil"> 
@@ -175,26 +170,31 @@
 --}}
 
 <section>
-    {{--<div class="container py-5">
+    {{-- <div class="container py-5">
       <div class="row">
         <div class="col">
           <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">User</a></li>
+              <li class="breadcrumb-item"></li>
+               <li class="breadcrumb-item"><a href="#">User</a></li>
               <li class="breadcrumb-item active" aria-current="page">User Profile</li>
             </ol>
+            
           </nav>
         </div>
       </div> --}}
   
       <div class="row mt-5">
+        
         <div class="col-lg-4">
+          
           <div class="card mb-4">
+            <a class="btn btn-success" href="{{route('home.index')}}">regresar</a>
             <div class="card-body text-center">
+              
               {{-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                 class="rounded-circle img-fluid" style="width: 150px;"> --}}
-                <img class="rounded-circle img-fluid" src="{{asset($registro->avatar)}}" style="width: 200px;" accept="image/*" alt="avatar">
+                <img class="rounded-circle img-fluid" src="{{asset($registro->avatar)}}"  style="width: 200px; height= 200px" accept="image/*" alt="avatar">
               <h5 class="my-3">{{$registro->name}}</h5>
               {{-- <p class="text-muted mb-1">Full Stack Developer</p> --}}
               {{-- <p class="text-muted mb-4">Bay Area, San Francisco, CA</p> --}}
@@ -202,11 +202,12 @@
                 <!-- <button type="button" class="btn btn-primary"></button> -->
                 {{-- <button type="button" class="btn btn-outline-primary ms-1">Editar perfil</button> --}}
 
-               <p>
-                    <button class="btn btn-outline-primary ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                      Editar perfil
-                    </button> 
+                <p>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Editar perfil
+                  </button>
                 </p>
+                
 
 
               </div>
@@ -359,6 +360,8 @@
               </div>
             </div>
           </div>
+          
+            
           <div class="collapse" id="collapseExample">
             <div class="card card-body">
                 <form class="form1" action="{{route('edit.update', $registro)}}" method="POST" enctype="multipart/form-data">
@@ -434,18 +437,11 @@
                               </div>
                               <div>
                                 <button class="btn btn-primary" type="submit">Actualizar información</button>
-                            </div>
-                            
-                            </div> 
-                
-                    </div>
-
-                    
-                
-            </form>
-        </div>
-        
-            
+                            </div>  
+                  </div> 
+                </div>
+              </form>
+            </div>  
           </div> 
         </div>
       </div>
@@ -453,14 +449,6 @@
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-<script
-src="https://code.jquery.com/jquery-3.6.1.js"
-integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-crossorigin="anonymous"></script>
-
-
-
-
+  
 </body>
 </html>
