@@ -40,6 +40,17 @@ body{
       
 }
 
+#input
+{
+    background-color: #ffe259;
+    color:blue;
+}
+
+.form-control
+{
+    color:blue;
+}
+
 .corousel-inner img{
     width:100%;
     height:100%;

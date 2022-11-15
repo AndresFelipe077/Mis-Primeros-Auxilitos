@@ -50,7 +50,7 @@
                         </div>
                       </div>
                       <div class="carousel-item">
-                        <img src="{{asset('img/imgs/niñaregister.png')}}" class="d-block d-flex align-items-center animate__animated animate__heartBeat rounded" alt="..." width="100%" height="100%"> 
+                        <img src="{{asset('img/imgs/imagenavatar1.png')}}" class="d-block d-flex align-items-center animate__animated animate__heartBeat rounded" alt="..." width="100%" height="100%"> 
                         <div class="carousel-caption d-none d-md-block">
                           <h5 class="bg-secondary rounded">Aprendamos observando</h5>
                         </div>
@@ -87,12 +87,12 @@
                 <form action="{{route('login.post')}}" method="POST">
                     @csrf
                    <div class="mb-4">
-                       <label for="email" class="form-label">Correo electronico</label>
-                       <input type="email" class="form-control" name="email" value="{{old('email')}}">
+                       <label for="email" class="form-label ">Correo electronico</label>
+                       <input type="email" id="input" class="form-control" name="email" value="{{old('email')}}">
                    </div>
                   <div class="mb-4">
                     <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" name="password" >
+                    <input type="password" id="input" class="form-control" name="password" >
                    </div>
                    <div class="d-grid">
                        <button type="submit" class="btn btn-primary">Iniciar sesión</button>

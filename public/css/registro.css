@@ -29,6 +29,10 @@
     --colorTextos:rgb(0, 38, 255);
 }
 
+:root{
+    --colorTextoPlaceholder:rgb(255, 196, 0);
+}
+
 ::before,
 ::after{
     margin:0;
@@ -110,7 +114,7 @@
 .input{
 
     background:none;
-    color:var(--colorTextoPlaceholder);
+    color:rgb(177, 117, 6);
     font-size:18px;
     padding:10px 10px 10px 5px;
     display:block;
@@ -180,6 +184,7 @@
     height: 40px;
     font-size: 16px;
     cursor:pointer;
+    border:1px;
 
 }
 
@@ -197,6 +202,7 @@
     height: 40px;
     font-size: 16px;
     cursor:pointer;
+    border:1px;
 
 }
 

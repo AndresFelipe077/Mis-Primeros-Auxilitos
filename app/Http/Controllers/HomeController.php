@@ -7,7 +7,6 @@ use App\Models\User;
 use App\Models\Contenido;
 use Illuminate\Support\Facades\Auth;
 
-use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Str;
 
@@ -17,10 +16,8 @@ class HomeController extends Controller
     //Vista home de videos
     public function index()
     {
-        $registro = new User();
         $contenidos = Contenido::orderBy('id','desc')->paginate(8);
         return view('home.index', compact('contenidos'));
-
     }
 
     //Vista configuracion
@@ -49,7 +46,7 @@ class HomeController extends Controller
         $ruta = storage_path() . '\app\public\images/' . $nombre;
 
         Image::make($request->file('file'))
-            ->resize(700, null, function($constraint){
+            ->resize(900, null, function($constraint){
                 $constraint->aspectRatio();
             })
             ->save($ruta);
@@ -86,7 +83,7 @@ class HomeController extends Controller
         
 
         Image::make($request->file('file'))
-            ->resize(700, null, function($constraint){
+            ->resize(900, null, function($constraint){
                 $constraint->aspectRatio();
             })
             ->save($ruta);
