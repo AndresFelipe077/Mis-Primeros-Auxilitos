@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="{{ asset('css/registro.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/registro.css')}}"/>
+    <link id="image-head" rel="shortcut icon" href="{{asset('img/registro/faviconRegistro.png')}}" type="image/x-icon">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
@@ -112,7 +113,8 @@
                             </label>
                         </div>
                         <div class="grupo">
-                            <input class="input" type="date" name="fechaNacimiento" id="name" required value="{{old('fechaNacimiento')}}"><span class="barra"></span>
+                            <input type="date" class="input" name="fechaNacimiento" id="Calendar" value="{{old('fechaNacimiento')}}"><span class="barra"></span>
+                            {{-- <img class="img-calendar" src="{{asset('img/registro/iconCalendary.png')}}" width="20px" height="20px"> --}}
                             <label class="label" for="">Fecha de nacimiento</label>
                         </div>
                         <div class="grupo">

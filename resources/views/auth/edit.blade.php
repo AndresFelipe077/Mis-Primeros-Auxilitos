@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
+    <link rel="shortcut icon" href="{{asset('img/profile/profile2.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('css/perfil.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     
@@ -29,18 +30,15 @@
                 <form method="POST" action="{{route('registro.destroy', $registro)}}">
                   @csrf
                   @method('delete')
-                  <button class="btn btn-danger" type="submit" id="a-borrar-cuenta" onclick="return confirm('¿Seguro que deseas eliminar tu cuenta?')">Borrar cuenta</button>
-                </form>
+                  <button class="btn btn-danger " type="submit" id="a-borrar-cuenta" onclick="return confirm('¿Seguro que deseas eliminar tu cuenta?')">Borrar cuenta</button>
+                </form>               
+                <a class="btn btn-outline-danger mt-3" href="{{route('logout')}}" onclick="return confirm('¿Seguro que deseas cerrar sesión?')"><img src="{{asset('img/profile/salida.png')}}" alt="" width="40px" height="40px"></a>
               </div>
           </div>
           <div class="card mb-4 mb-lg-0">
+            <h4 class="card card-title">Descripción</h4>
             <div class="card-body p-0">
-              <ul class="list-group list-group-flush rounded-3">
-                <p class="list-group-item d-flex justify-content-between align-items-center p-3">
-                  <h4>Descripción</h4>
-                  <p class="mb-0">...</p>
-                </p>             
-              </ul>
+              <p class="mb-0">...</p>
             </div>
           </div>
         </div>
@@ -179,7 +177,10 @@
                         <br>
                         <div class="form-group m-1">
                           <label for="" class="text-primary">Fecha de nacimiento</label>
-                        <input class="form-control text-center" type="date" name="fechaNacimiento" id="name" required value="{{$registro->fechaNacimiento}}">
+                          <br>
+                          {{-- <input class="form-control text-center" type="date" name="fechaNacimiento" id="name" required value="{{$registro->fechaNacimiento}}"> --}}
+                          <input type="date" class="Calendar" name="fechaNacimiento" id="name" value="{{$registro->fechaNacimiento}}"><span class="barra"></span>
+                          <img class="img-calendar" src="{{asset('img/registro/iconCalendary.png')}}" width="20px" height="20px">                               
                           {{-- @error('fechaNacimiento')
                                   <br>
                                       <small class="text-danger">{{$message}}</small>

@@ -112,7 +112,7 @@
         </li>
         <li><hr class="dropdown-divider"></li>
         <li>
-          <a class="dropdown-item dropdown-item-danger d-flex gap-2 align-items-center" href="{{route('logout')}}">
+          <a class="dropdown-item dropdown-item-danger d-flex gap-2 align-items-center" href="{{route('logout')}}" onclick="return confirm('¿Seguro que deseas cerrar sesión?')">
             <img src="/img/logout.jpeg" alt="" width="20" height="20">
             <h3>Cerrar sesión</h3>
           </a>

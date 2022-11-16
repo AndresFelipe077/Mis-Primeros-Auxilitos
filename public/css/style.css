@@ -398,10 +398,6 @@ class == .
 
 /*INICIO AJUSTES*/
 
-<<<<<<< HEAD
-.perfil{
-=======
-
 .perfil{
 position: relative;
 
@@ -576,9 +572,7 @@ left: 120px;
 .container-padre1{
     margin-top: -3em;
     margin: 0 auto;
->>>>>>> d619a4c9b2036c8a4ce25612ac9b850191d22ac9
     position: relative;
-    
     right: 480px;
     top: 260px;
     

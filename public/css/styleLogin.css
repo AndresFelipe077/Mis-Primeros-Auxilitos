@@ -40,15 +40,15 @@ body{
       
 }
 
-#input
+.texto-login
 {
-    background-color: #ffe259;
     color:blue;
 }
 
 .form-control
 {
     color:blue;
+    background-color:rgb(251, 250, 248);
 }
 
 .corousel-inner img{

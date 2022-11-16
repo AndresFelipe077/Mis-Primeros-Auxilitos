@@ -2,11 +2,16 @@
 
 body{
     
+    font-family: 'DynaPuff', cursive;
     background-image:url('/img/imgs/a.jpg');
     height:100vh;
     background-size: cover;
     background-position: center;
 
+}
+
+.gallery{
+    font-family: 'DynaPuff', cursive;
 }
 
 .col

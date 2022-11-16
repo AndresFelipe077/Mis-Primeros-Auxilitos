@@ -86,14 +86,14 @@
 
                 <form action="{{route('login.post')}}" method="POST">
                     @csrf
-                   <div class="mb-4">
-                       <label for="email" class="form-label ">Correo electronico</label>
-                       <input type="email" id="input" class="form-control" name="email" value="{{old('email')}}">
-                   </div>
-                  <div class="mb-4">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" id="input" class="form-control" name="password" >
-                   </div>
+                    <div class="form-floating mb-3">
+                      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" value="{{old('email')}}">
+                      <label for="floatingInput" class="texto-login">Correo</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+                      <label for="floatingPassword" class="texto-login">Contraseña</label>
+                    </div>
                    <div class="d-grid">
                        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
                    </div>
