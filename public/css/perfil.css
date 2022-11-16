@@ -39,18 +39,6 @@
 
 }
 
-#a-regresar-perfil
-{
-    font-size:1.5em;
-    font-family:'DynaPuff', cursive;
-    border-radius:10px;
-    background-color: rgb(216, 203, 28);
-    color: aliceblue;
-    cursor: pointer;
-    color: #3a01f6;
-    background:linear-gradient(to right, #bdf71e, #26ff00, #bdf71e);
-    
-}
 
 .form1{
 
@@ -67,48 +55,53 @@
 
 }
 
-.container-padre1{
-    margin-top: -3em;
-    margin: 0 auto;
+#img{
+    width: 200px;
+    height: 200px;
+}
+
+#juegos{
+    font-size: 1em;
+}
+
+#progreso-Padre
+{
+    height: 5px;
+}
+
+/* Este progressBar se ejecutara por medio de backend */
+#progressBar
+{
+    width: 80%
+}
+
+/* File */
+.form-control-file {
     position: relative;
-    justify-content:center;
-    display:grid;
+    display: inline-block;
+}
+  
+.form-control-file::before {
+    background-color: #5678EF;
+    color: white;
+    display: flex;
+    justify-content: center;
     align-items: center;
-}
-
-.container-hijo-1{
-    margin:10px;
-    align-items:center;
-    text-align:center;
-}
-
-.container-padre
-{
-    
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    background:white;
     border-radius: 10px;
-    animation-name:mianimacion;
-    animation-duration:3s;
-
-
+    content: 'Seleccionar imagen'; /* testo por defecto */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
-
-.container-1
-{
-    width: 50%;
-    font-size: 1.5em;
+  
+.form-control-file input[type="file"] {
+    opacity: 0;
+    width: 100px;
+    height: 32px;
+    display: inline-block;
 }
-
-.container-2
-{
-    width: 50%;
-    font-size:1.5em;
-}
-
 
 
 #label-name
@@ -117,53 +110,8 @@
     margin-left:10px;
 }
 
-/* .imagen-perfil-perfil{
-    /* height:10em; 
-    /* width:10em; 
-    background:#3b3a3b;
-    -moz-border-radius:50%;
-    -webkit-border-radius:50%;
-    border-radius:50%;
-    display:flex;
-    justify-content: center;
-    margin-left:1.5em;
-    cursor: pointer;
-    
-} */
 
-@media screen and (max-width:750px){
-    .imagen-perfil-perfil{
-        width: 150px;
-        height: 150px;
-        justify-content: center;
-        align-items: center;
-        margin-left:3.5em;
-    }    
-}
 
-@media screen and (max-width:300px){
-    .imagen-perfil-perfil{
-        width: 150px;
-        height: 150px;
-        justify-content: center;
-        align-items: center;
-        margin-left:1em;
-    }    
-}
-
-#btn-cambiar-imagen-perfil
-{
-    font-size:1.1em;
-    font-family:'DynaPuff', cursive;
-    border-radius:10px;
-    background-color: rgb(216, 203, 28);
-    color: aliceblue;
-    cursor: pointer;
-    color: #3a01f6;
-    background:linear-gradient(to right, #bdf71e, #26ff00, #bdf71e);
-    
-    
-}
 
 #btn-actualizar-image
 {
@@ -192,20 +140,6 @@
     
 }
 
-.footer-perfil-perfil{
-width: 100%;
-background-color: rgb(0, 89, 255);
-bottom: 0;
-position: fixed;
-margin: 0 auto;
-text-align: center;
-display:flex;
-justify-content:center;
-border-radius:20px;
-color: white;
-font-size: 1.5em;
-}
-
 
 .btn-cambiar-contrasena-perfil
 {
@@ -217,12 +151,6 @@ font-size: 1.5em;
     color: #3a01f6;
     background:linear-gradient(to right, #bdf71e, #26ff00, #bdf71e);
     font-size: 1.1em;
-}
-
-.content-retos-Perfil{
-
-    padding-left: -50px;
-
 }
 
 
