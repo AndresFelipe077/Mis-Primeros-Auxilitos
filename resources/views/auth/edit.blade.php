@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href="{{asset('img/profile/profile2.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('css/perfil.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    
 </head>
 <body class="body-perfil"> 
 
@@ -173,14 +172,13 @@
                                       <small class="text-danger">{{$message}}</small>
                                   <br>
                           @enderror --}}
+                          
                         </div>
                         <br>
                         <div class="form-group m-1">
-                          <label for="" class="text-primary">Fecha de nacimiento</label>
-                          <br>
-                          {{-- <input class="form-control text-center" type="date" name="fechaNacimiento" id="name" required value="{{$registro->fechaNacimiento}}"> --}}
-                          <input type="date" class="Calendar" name="fechaNacimiento" id="name" value="{{$registro->fechaNacimiento}}"><span class="barra"></span>
-                          <img class="img-calendar" src="{{asset('img/registro/iconCalendary.png')}}" width="20px" height="20px">                               
+                          <label class="label" id="dateFecha" for="">Fecha de nacimiento</label><br>
+                          <input type="date" class="input" name="fechaNacimiento" id="Calendar" value="{{$registro->fechaNacimiento}}"><span class="barra"></span>
+                          
                           {{-- @error('fechaNacimiento')
                                   <br>
                                       <small class="text-danger">{{$message}}</small>
@@ -209,6 +207,7 @@
 
 <script src="{{asset('js/checkCheckBox.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
 
 </body>
 </html>

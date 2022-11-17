@@ -23,12 +23,30 @@ class HomeController extends Controller
     //Vista configuracion
     public function ajustes()
     {
-        return view('home.ajustes');
+        if(Auth::check())
+        {
+            return view('home.ajustes');
+        }
+        else
+        {
+            $contenidos = Contenido::orderBy('id','desc')->paginate(5);
+            return view('home.index', compact('contenidos'));  
+        } 
+        
     }
 
     public function create()
     {   
-        return view('home.create');
+        if(Auth::check())
+        {
+            return view('home.create');
+        }
+        else
+        {
+            $contenidos = Contenido::orderBy('id','desc')->paginate(5);
+            return view('home.index', compact('contenidos'));  
+        }
+  
     }
 
     public function store(Request $request)
@@ -64,7 +82,17 @@ class HomeController extends Controller
 
     public function edit(Contenido $contenido)
     {
-        return view('home.edit',compact('contenido'));
+
+        if(Auth::check())
+        {
+            return view('home.edit',compact('contenido'));
+        }
+        else
+        {
+            $contenidos = Contenido::orderBy('id','desc')->paginate(5);
+            return view('home.index', compact('contenidos'));  
+        }
+   
     }
 
     public function update(Request $request, Contenido $contenido)
@@ -104,6 +132,17 @@ class HomeController extends Controller
         $contenido->delete();
                                                     // eliminar => variable, ok => mensaje
         return redirect()->route('home.index')->with('eliminar','ok');
+    }
+
+    public function adminContent()
+    {
+        $contenidos = Contenido::orderBy('id','asc')->paginate(8);
+        return view('admin.contenidos', compact('contenidos'));
+    }
+
+    public function adminHome()
+    {
+        return view('admin.home');
     }
             
 

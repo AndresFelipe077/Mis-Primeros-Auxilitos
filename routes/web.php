@@ -39,6 +39,12 @@ Route::controller(HomeController::class)->group(function(){
     //Acceder a vista ajustes
     Route::get('home/ajustes/','ajustes')->name('home.ajustes');
 
+    //Admin
+    Route::get('admin/contenido','adminContent')->name('admin.contenido');
+
+    //Es el home de admin
+    Route::get('admin/home','adminHome')->name('admin.home');
+
 });
 
 
@@ -63,6 +69,13 @@ Route::controller(UserController::class)->group(function(){
     Route::get('logout/','logout')->name('logout');
 
     Route::delete('edit/{registro}/edit','destroy')->name('registro.destroy');
+
+    //Administrador
+    Route::get('admin','admin')->name('admin');
+    
+    Route::get('admin/users','adminUser')->name('admin.user');
+    
+
 
     //Registro exclusivo con google
     // Route::get('/login/google', 'redirectToGoogle')->name('login.google');

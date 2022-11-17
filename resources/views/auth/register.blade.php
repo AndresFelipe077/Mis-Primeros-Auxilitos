@@ -112,11 +112,13 @@
                                 <span><label class="text-primary" for="">Otro</label></span>
                             </label>
                         </div>
-                        <div class="grupo">
+                        
+                        <div class="grupo">  
                             <input type="date" class="input" name="fechaNacimiento" id="Calendar" value="{{old('fechaNacimiento')}}"><span class="barra"></span>
-                            {{-- <img class="img-calendar" src="{{asset('img/registro/iconCalendary.png')}}" width="20px" height="20px"> --}}
-                            <label class="label" for="">Fecha de nacimiento</label>
+                            <br>
+                            <label class="label" id="dateFecha" for="">Fecha de nacimiento</label> 
                         </div>
+                        
                         <div class="grupo">
                             <input class="input" type="password" name="password" id="name" required><span class="barra"></span>
                             <label class="label" for="">Contraseña</label>

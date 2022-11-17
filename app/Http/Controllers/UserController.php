@@ -69,9 +69,15 @@ class UserController extends Controller
     //Editar
     public function edit(User $registro)
     {
-        
-        return view('auth.edit', compact('registro'));
-        
+        if(Auth::check())
+        {
+            return view('auth.edit', compact('registro'));
+        }
+        else
+        {
+            $contenidos = Contenido::orderBy('id','desc')->paginate(5);
+            return view('home.index', compact('contenidos'));  
+        }   
     }
 
     public function update(Request $request, User $registro)
@@ -117,6 +123,17 @@ class UserController extends Controller
         return redirect()->route('login');
     }
 
+    //Funcion del administrador
+    public function admin()
+    {  
+        return view('layouts.plantillaAdmin');
+    }
+
+    public function adminUser()
+    {
+        $users = User::orderBy('id','asc')->paginate(10);
+        return view('admin.users',compact('users'));
+    }
 
     //Logueo con redes sociales
 
