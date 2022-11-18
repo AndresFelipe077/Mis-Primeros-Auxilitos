@@ -123,18 +123,6 @@ class UserController extends Controller
         return redirect()->route('login');
     }
 
-    //Funcion del administrador
-    public function admin()
-    {  
-        return view('layouts.plantillaAdmin');
-    }
-
-    public function adminUser()
-    {
-        $users = User::orderBy('id','asc')->paginate(10);
-        return view('admin.users',compact('users'));
-    }
-
     //Logueo con redes sociales
 
     // //Google login

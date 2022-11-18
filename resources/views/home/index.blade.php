@@ -41,6 +41,7 @@
                             <div class="inner">
                             <img class="card-img-top rounded-3" src="{{ asset($contenido->url) }}" alt="" width="200px" height="200px">
                             </div>
+                            <p class="text-danger">{{auth()->user()->name}}</p>
                             <p><strong>Autor: </strong> {{$contenido->autor}}</p>
                             <p class="card-text">    
                                 {{$contenido->description}}

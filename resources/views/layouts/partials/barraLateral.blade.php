@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{asset('css/barraLateral.css')}}">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="bootstrap" viewBox="0 0 118 94">
       <title>Mis Primeros Auxilitos</title>
@@ -67,31 +68,31 @@
       </a>
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <a href="{{route('admin.home')}}" class="nav-link active" aria-current="page">
+        <li id="li" class="nav-item">
+          <a href="{{route('admin')}}" class="nav-link text-white" aria-current="page">
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
             Home
           </a>
         </li>
-        <li>
+        <li id="li">
           <a href="{{route('admin.user')}}" class="nav-link text-white">
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
             Usuarios
           </a>
         </li>
-        <li>
+        <li id="li">
           <a href="{{route('admin.contenido')}}" class="nav-link text-white">
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
             Contenido
           </a>
         </li>
-        <li>
+        <li id="li">
           <a href="#" class="nav-link text-white">
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
             Juegos
           </a>
         </li>
-        <li>
+        <li id="li">
           <a href="#" class="nav-link text-white">
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
             Administradores

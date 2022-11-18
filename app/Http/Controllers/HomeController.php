@@ -133,17 +133,6 @@ class HomeController extends Controller
                                                     // eliminar => variable, ok => mensaje
         return redirect()->route('home.index')->with('eliminar','ok');
     }
-
-    public function adminContent()
-    {
-        $contenidos = Contenido::orderBy('id','asc')->paginate(8);
-        return view('admin.contenidos', compact('contenidos'));
-    }
-
-    public function adminHome()
-    {
-        return view('admin.home');
-    }
             
 
 }
