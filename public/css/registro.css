@@ -29,10 +29,6 @@
     --colorTextos:rgb(0, 38, 255);
 }
 
-:root{
-    --colorTextoPlaceholder:rgb(255, 196, 0);
-}
-
 ::before,
 ::after{
     margin:0;
@@ -82,7 +78,7 @@
     position:relative;
     animation-name:mianimacion;
     animation-duration:3s;
-    
+
 
 }
 
@@ -91,7 +87,7 @@
     0%{
         top:0px;
     }
-    
+
     25%{ 
         top:-50px;   
     }
@@ -110,15 +106,36 @@
     margin:25px;
     /*background:black;*/
 }
+
+.input{
+
+    background:none;
+    color:var(--colorTextoPlaceholder);
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom: 1px solid var(--colorTextos);
+    font-family: 'DynaPuff', cursive;
+
+}
+
+.input:focus{
+    outline:none;
+    color:var(--colorTextoPlaceholder);
+}
+
 .label{ 
-    color:rgb(34, 57, 187);
+    color:var(--colorTextos);
+    /*color:white;*/
     font-size:16px;
     position:absolute;
     left:5px;
     top: 10px;
     transition:0.7s ease all;
     pointer-events: none;
-    
+
 }
 
 .input:focus~label,
@@ -149,7 +166,6 @@
     width:100%;
 }
 
-
 #btn_Registrar{
 
     font-family: 'DynaPuff', cursive;
@@ -164,7 +180,6 @@
     height: 40px;
     font-size: 16px;
     cursor:pointer;
-    border:1px;
 
 }
 
@@ -182,7 +197,6 @@
     height: 40px;
     font-size: 16px;
     cursor:pointer;
-    border:1px;
 
 }
 

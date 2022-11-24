@@ -18,12 +18,20 @@
 
     {{-- animations css --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> 
-    
+    {{-- Script de notificacion --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     
 
 </head>
-<body> 
+<body>
+  
+  <div class="intro">
+    <h1 class="logo-header">
+        <span class="logo">MIS PRIMEROS</span>
+        <span class="logo"><img src="{{asset('img/logo/logo.png')}}" alt=""></span><span class="logo">AUXILITOS</span>
+    </h1>
+  </div>
 
 
     <div class="container mt-5 animate__animated animate__swing rounded">
@@ -75,6 +83,17 @@
                 </div>
                 <h2 id="container-login" class="fw-bold text-center py-5 text-primary rounded">Bienvenido</h2>
 
+                {{-- Sino funciona con un alert --}}
+                @if(session('exito') == 'ok')
+                  <script>
+                      Swal.fire(
+                          '¡Genial!',
+                          'Cuenta creada con exito!!!.',
+                          'success'
+                      )
+                  </script>
+                @endif
+
                 <!-- Login -->
                 @if($errors->any())
                 <div class="alert alert-danger animate__animated animate__swing" role="alert">                 
@@ -107,6 +126,7 @@
                 <div class="container w-100 my-3">
                     <div class="row text-center">
                         <div class="col-12 h5">Iniciar sesion</div>
+                        
                     </div>
                     <div class="row text-center">
                         <div class="col">
@@ -140,7 +160,7 @@
 
 <!--Script-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="{{asset('js/splahScreen.js')}}"></script>
 
 
 </body>

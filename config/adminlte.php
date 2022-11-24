@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Mis Primeros</b><br><center>Auxilitos</center>',
+    'logo' => '<center><h6>Mis Primeros Auxilitos</h6></center>',
     'logo_img' => 'vendor/adminlte/dist/img/logo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -109,7 +109,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/logo.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -210,7 +210,7 @@ return [
     |
     */
 
-    'sidebar_mini' => 'lg',
+    'sidebar_mini' => false,
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
@@ -293,7 +293,7 @@ return [
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => 'search',
+            'text'         => 'Buscar',
             'topnav_right' => true,
         ],
         [
@@ -304,7 +304,7 @@ return [
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'buscar',
         ],
         [
             'text' => 'blog',
@@ -312,10 +312,38 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
+            'text'        => 'Home',
+            'url'         => 'admin',
+            'icon'        => 'fas fa-fw fa-home',
+            // 'label'       => 5,
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Usuarios',
+            'url'         => 'admin/users',
+            'icon'        => 'fas fa-fw fa-users',
+            // 'label'       => 5,
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Contenidos',
+            'url'         => 'admin/contenido',
+            'icon'        => 'fas fa-fw fa-folder',
+            // 'label'       => 5,
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Juegos',
+            'url'         => 'admin',
+            'icon'        => 'fas fa-fw fa-gamepad',
+            // 'label'       => 5,
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Administradores',
+            'url'         => 'admin',
+            'icon'        => 'fas fa-fw fa-user',
+            'label'       => 5,
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
@@ -466,7 +494,7 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',

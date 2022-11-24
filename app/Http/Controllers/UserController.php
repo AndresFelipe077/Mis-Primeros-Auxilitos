@@ -13,6 +13,7 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\Admin\AdminController;
 
 class UserController extends Controller
 {
@@ -28,6 +29,7 @@ class UserController extends Controller
 
     public function login(LoginRequest $request)
     {
+        $user1 = new User();
         $credencials = $request->getCredentials();
         
         if(!Auth::validate($credencials))
@@ -35,6 +37,19 @@ class UserController extends Controller
 
             return redirect()->to('/login')->withErrors('Correo y/o contraseña incorrectos');
         }
+        // else
+        // {
+        //     if( $user1->role == 'admin')
+        //     {
+        //         return redirect()->route('admin');
+        //     }
+        //     else
+        //     {
+        //         $contenidos = Contenido::orderBy('id','desc')->paginate(5);               
+        //         return view('home.index', compact('contenidos'));
+        //     }
+        // }
+
     
         $user = Auth::getProvider()->retrieveByCredentials($credencials);
 
@@ -63,7 +78,7 @@ class UserController extends Controller
     public function register(RegisterRequest $request)
     {
         $user = User::create($request->validated());
-        return redirect('login')->with('Exito','cuenta creada exitosamente!!!');
+        return redirect('login')->with('Exito','ok');
     }
 
     //Editar

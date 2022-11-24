@@ -9,16 +9,17 @@ use App\Models\User;
 
 class AdminController extends Controller
 {
-    public function adminContent()
-    {
-        $contenidos = Contenido::orderBy('id','asc')->paginate(8);
-        return view('admin.contenidos', compact('contenidos'));
-    }
-
 
     public function admin()
     {  
         return view('admin.home');
+    }
+
+
+    public function adminContent()
+    {
+        $contenidos = Contenido::orderBy('id','asc')->paginate(8);
+        return view('admin.contenidos', compact('contenidos'));
     }
 
     public function adminUser()

@@ -18,6 +18,7 @@ return new class extends Migration
 
             $table->string('name',50);
             $table->string('email',50)->unique();
+            $table->string('role',50)->nullable();
             $table->string('provider_id')->nullable();
             $table->string('avatar')->nullable();
             $table->string('genero',20);

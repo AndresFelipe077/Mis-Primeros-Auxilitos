@@ -2,7 +2,7 @@
 
 @section('title','Crear contenido')
 
-<link rel="stylesheet" href="{{asset('css/create-content.css')}}" />
+
 
 @section('content')
 
@@ -59,5 +59,5 @@
             </div>
           </form>
     </div>
-          
+<link rel="stylesheet" href="{{asset('css/create-content.css')}}" /> 
 @endsection

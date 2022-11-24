@@ -20,12 +20,13 @@ class UserFactory extends Factory
         
         return [
             'name'              => fake()-> name(),
-            'avatar'            => $this -> faker ->text('50'),
-            'email'             => fake()-> unique()->safeEmail(),
-            'genero'            => $this -> faker -> randomElement(['Masculino','Femenino','Otro']),
-            'fechaNacimiento'   => $this -> faker -> randomElement(['2003/12/13','2002/12/16','2005/08/13','2022/02/14']),
+            'avatar'            => $this -> faker    -> randomElement(['/storage/imagesFactory/policia.png','/storage/imagesFactory/logo.png']),
+            'role'              => $this -> faker    -> randomElement(['admin',null]),
+            'email'             => fake()-> unique() -> safeEmail(),
+            'genero'            => $this -> faker    -> randomElement(['Masculino','Femenino','Otro']),
+            'fechaNacimiento'   => $this -> faker    -> randomElement(['2003/12/13','2002/12/16','2005/08/13','2022/02/14']),
             'email_verified_at' => now(),
-            'password'          => $this -> faker -> randomElement(['12345678']),//bcrypt('password'), // password '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+            'password'          => $this -> faker    -> randomElement(['12345678']),//bcrypt('password'), // password '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
             'remember_token'    => Str::random(10),
         ];
 

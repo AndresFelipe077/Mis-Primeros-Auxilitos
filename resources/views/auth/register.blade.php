@@ -70,12 +70,12 @@
                 
                 <!-- Registro -->
 
-                <form action="{{route('registro.user')}}" method="POST" id="formulario" class="animate__animated animate__jackInTheBox">
+                {{-- <form action="{{route('registro.user')}}" method="POST" id="formulario" class="animate__animated animate__jackInTheBox"> --}}
 
                     {{-- Input oculto --}}
-                    @csrf
+                    {{-- @csrf --}}
             
-                    <div class="form">
+                    {{-- <div class="form">
                         <h1 id="tituloAuxilitos">MIS PRIMEROS AUXILITOS</h1>
                         <h1 id="tituloRegistro">Registro</h1>
             
@@ -89,6 +89,95 @@
                             </div>                          
                         @endif
             
+                        <div class="grupo">
+                            <input type="text" class="input" name="name" id="name" required value="{{old('name')}}"><span class="barra"></span>
+                            <label  class="label" for="">Nombre</label>
+                        </div>
+                        <div class="grupo">
+                            <input class="input" type="email" name="email" id="name" required value="{{old('email')}}"><span class="barra"></span>
+                            <label class="label" for="">Correo</label>
+                        </div>
+                        <div class="grupo">
+                            <h4 class="text-primary">Escoge tu genero </h4>
+                            <label>
+                                <input name="genero" class="custom-checkbox" value="Masculino" type="checkbox">
+                                <span><label class="text-primary" for="">Masculino</label></span>
+                            </label>
+                            <label>
+                                <input name="genero" class="custom-checkbox" value="Femenino" type="checkbox">
+                                <span><label class="text-primary" for="">Femenino</label></span>
+                            </label>
+                            <label>
+                                <input name="genero" class="custom-checkbox" value="Otro" type="checkbox">
+                                <span><label class="text-primary" for="">Otro</label></span>
+                            </label>
+                        </div>
+                        
+                        <div class="grupo"> 
+                            <input type="date" class="input" name="fechaNacimiento" id="name" required value="{{old('fechaNacimiento')}}"><span class="barra"></span>
+                            <label  class="label" for="">Fecha de nacimiento</label>
+                        </div>
+                        
+                        <div class="grupo">
+                            <input class="input" type="password" name="password" id="name" required><span class="barra"></span>
+                            <label class="label" for="">Contraseña</label>
+                            @if($errors->any('password'))
+                                <div class="text-danger" role="alert">       
+                                    <p>La constraseña debe coincidir</p>
+                                </div>
+                            @endif
+                        </div>
+            
+                        <div class="grupo">
+                            <input class="input" type="password" name="password_confirmation" id="name" required><span class="barra"></span>
+                            <label class="label" for="">Confirmar contraseña</label>
+                            @if($errors->any('password'))
+                                <div class="text-danger" role="alert">       
+                                    <p>La constraseña debe coincidir</p>
+                                </div>
+                            @endif
+                        </div> --}}
+                        
+            
+                        {{-- <div class="grupo">
+                            <div class="form-check text-primary">
+                                <input type="checkbox" name="terms-conditions" class="form-check-input text-info animate__animated animate__rotateIn" id="_vanishIn" required>
+                                <label class="form-check-label" for="exampleCheck1">Acepto las <strong><a href="#">Condiciones del servicio</a></strong> y la 
+                                    <strong><a href="#">Politica de privacidad</a></strong></label>
+                            </div>
+                        </div>
+                        
+            
+                        <button type="submit" id="btn_Registrar">Registrarse</button>
+                        <button type="submit" id="btn_Regresar" onclick="location.href='{{route('login')}}'">Regresar</button>    
+            
+            
+                        
+            
+            
+                    </div>
+            
+                </form> --}}
+                <form action="{{route('registro.user')}}" method="POST" id="formulario" class="animate__animated animate__jackInTheBox">
+
+                    {{-- Input oculto --}}
+                    @csrf
+
+                    <div class="form">
+                        <h1 id="tituloAuxilitos">MIS PRIMEROS AUXILITOS</h1>
+                        <h1 id="tituloRegistro">Registro</h1>
+
+                        @if($errors->any())
+                            <div class="alert alert-danger" role="alert">                 
+                                    @foreach($errors->all() as $error)
+                                    <ul>
+                                        <strong>* {{$error}}</strong>
+                                    </ul>
+
+                                    @endforeach              
+                            </div>                          
+                        @endif
+
                         <div class="grupo">
                             <input class="input" type="text" name="name" id="name" required value="{{old('name')}}"><span class="barra"></span>
                             <label  class="label" for="">Nombre</label>
@@ -112,13 +201,10 @@
                                 <span><label class="text-primary" for="">Otro</label></span>
                             </label>
                         </div>
-                        
-                        <div class="grupo">  
-                            <input type="date" class="input" name="fechaNacimiento" id="Calendar" value="{{old('fechaNacimiento')}}"><span class="barra"></span>
-                            <br>
-                            <label class="label" id="dateFecha" for="">Fecha de nacimiento</label> 
+                        <div class="grupo">
+                            <input class="input" type="date" name="fechaNacimiento" id="name" required value="{{old('fechaNacimiento')}}"><span class="barra"></span>
+                            <label class="label" for="">Fecha de nacimiento</label>
                         </div>
-                        
                         <div class="grupo">
                             <input class="input" type="password" name="password" id="name" required><span class="barra"></span>
                             <label class="label" for="">Contraseña</label>
@@ -128,7 +214,7 @@
                                 </div>
                             @endif
                         </div>
-            
+
                         <div class="grupo">
                             <input class="input" type="password" name="password_confirmation" id="name" required><span class="barra"></span>
                             <label class="label" for="">Confirmar contraseña</label>
@@ -138,7 +224,7 @@
                                 </div>
                             @endif
                         </div>
-            
+
                         <div class="grupo">
                             <div class="form-check text-primary">
                                 <input type="checkbox" name="terms-conditions" class="form-check-input text-info animate__animated animate__rotateIn" id="_vanishIn" required>
@@ -146,17 +232,17 @@
                                     <strong><a href="#">Politica de privacidad</a></strong></label>
                             </div>
                         </div>
-                        
-            
+
+
                         <button type="submit" id="btn_Registrar">Registrarse</button>
                         <button type="submit" id="btn_Regresar" onclick="location.href='{{route('login')}}'">Regresar</button>    
-            
-            
-                        
-            
-            
+
+
+
+
+
                     </div>
-            
+
                 </form>
             </div>
 
@@ -171,4 +257,5 @@
     
     
 </body>
+
 </html>

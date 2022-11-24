@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="{{asset('img/profile/profile2.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('css/perfil.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
 </head>
 <body class="body-perfil"> 
 
@@ -176,15 +177,18 @@
                         </div>
                         <br>
                         <div class="form-group m-1">
-                          <label class="label" id="dateFecha" for="">Fecha de nacimiento</label><br>
-                          <input type="date" class="input" name="fechaNacimiento" id="Calendar" value="{{$registro->fechaNacimiento}}"><span class="barra"></span>
-                          
+                          <label for="">Fecha de nacimiento</label><br>
+                          {{-- <input type="date" class="form-control" readonly value="{{$registro->fechaNacimiento}}">                          --}}
                           {{-- @error('fechaNacimiento')
                                   <br>
                                       <small class="text-danger">{{$message}}</small>
                                   <br>
-                          @enderror --}}
-                        </div>
+                          @enderror--}}                      
+                            <input class="input bg-info rounded" type="date" name="fechaNacimiento" id="name" required value="{{$registro->fechaNacimiento}}"><span class="barra"></span>
+                            
+                        
+                        </div>                  
+                      </div>
                         <br>
                         <div>
                           <button class="btn btn-primary" type="submit">Actualizar información</button>
@@ -204,7 +208,6 @@
       </div>
     </div>
 </section>
-
 <script src="{{asset('js/checkCheckBox.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 

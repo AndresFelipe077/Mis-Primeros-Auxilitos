@@ -20,7 +20,7 @@
               </svg>p
           </a>
 
-            <button class="btn success rounded-circle" onclick="location.href='{{route('auth.edit', auth()->user()->id)}}'"><img class="rounded-circle" src="{{auth()->user()->avatar}}" width="50px" height="50px"></button>
+            <button class="btn success rounded-circle" onclick="location.href='{{route('auth.edit', auth()->user()->id)}}'"><img class="rounded-circle" src="{{asset('/storage/imagesFactory/logo.png')}}" {{--src="{{auth()->user()->avatar}}"--}} width="50px" height="50px"></button>
           </div>
         </div>
     </nav>

@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 
 @section('title','Editar contenido')
-<link rel="stylesheet" href="{{asset('css/create-content.css')}}">
+
 @section('content')
 
     <h1 id="title-h1" class="text-center">Vista crear videos</h1>
@@ -72,5 +72,5 @@
     </div>
 
 <script src="{{asset('js/toast-delete.js')}}"></script>
-
+<link rel="stylesheet" href="{{asset('css/create-content.css')}}">
 @endsection

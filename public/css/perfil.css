@@ -79,6 +79,8 @@
 .form-control-file {
     position: relative;
     display: inline-block;
+    justify-content: center;
+    
 }
   
 .form-control-file::before {
@@ -99,8 +101,11 @@
 .form-control-file input[type="file"] {
     opacity: 0;
     width: 100%;
-    height: 32px;
-    display: inline-block;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 
